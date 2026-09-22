@@ -1,0 +1,965 @@
+/* =========================================================
+   ARCN STANDARD PAGE
+   ========================================================= */
+
+.arcn-standard-page {
+	--arcn-red: #c8102e;
+
+	--arcn-heading: #000000;
+	--arcn-text: #333333;
+	--arcn-link: #111111;
+	--arcn-muted: #666666;
+
+	--arcn-border: #111111;
+	--arcn-light-border: #dddddd;
+	--arcn-surface: #fafafa;
+
+	/*
+	 * Change this later if the final header is sticky.
+	 *
+	 * Example:
+	 * --arcn-anchor-offset: 100px;
+	 */
+	--arcn-anchor-offset: 24px;
+
+	width: 100%;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	color: var(--arcn-text);
+}
+
+.arcn-standard-page,
+.arcn-standard-page * {
+	box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SHARED WIDTH
+   ========================================================= */
+
+.arcn-page-intro,
+.arcn-page-body {
+	width: 90%;
+	max-width: none;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* =========================================================
+   PAGE INTRO
+   ========================================================= */
+
+.arcn-page-intro {
+	background: var(--arcn-surface);
+}
+
+.arcn-page-intro__columns {
+	margin: 0;
+
+	gap: 0;
+
+	align-items: stretch;
+}
+
+.arcn-page-intro__copy {
+	display: flex;
+
+	flex-direction: column;
+	justify-content: center;
+
+	padding: 40px 30px;
+}
+
+.arcn-page-title {
+	margin: 0 0 18px !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.25;
+
+	letter-spacing: 0;
+
+	color: var(--arcn-heading);
+}
+
+.arcn-page-intro__text {
+	margin: 0 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+.arcn-page-intro__text:not(.has-text-color) {
+	color: var(--arcn-text) !important;
+}
+
+
+/* =========================================================
+   HERO IMAGE AREA
+   ========================================================= */
+
+.arcn-page-intro__media {
+	display: flex;
+
+	flex-direction: column;
+
+	min-width: 0;
+}
+
+.arcn-hero-image-slot {
+	position: relative;
+
+	width: 100%;
+
+	min-height: 300px;
+
+	aspect-ratio: 2 / 1;
+
+	margin: 0 !important;
+
+	overflow: hidden;
+
+	background: #eeeeee;
+}
+
+.arcn-hero-image-slot .wp-block-image {
+	width: 100%;
+	height: 100%;
+
+	margin: 0 !important;
+}
+
+.arcn-hero-image-slot .wp-block-image img {
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+	object-position: 40% 34%;
+}
+
+
+/* =========================================================
+   IMAGE CAPTION
+   ========================================================= */
+
+.arcn-image-caption {
+	margin: 0 !important;
+
+	padding: 10px 4px 0;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 11px;
+	font-weight: 400;
+	line-height: 1.45;
+}
+
+.arcn-image-caption:not(.has-text-color) {
+	color: var(--arcn-muted) !important;
+}
+
+
+/* =========================================================
+   PAGE BODY
+   ========================================================= */
+
+.arcn-page-body {
+	display: grid;
+
+	grid-template-columns:
+		minmax(190px, 1fr)
+		minmax(0, 3fr);
+
+	gap: 40px;
+
+	align-items: start;
+
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.arcn-page-sidebar {
+	position: sticky;
+
+	top: 20px;
+
+	padding: 30px 20px;
+
+	background: var(--arcn-surface);
+}
+
+.arcn-page-sidebar__title {
+	margin: 0 0 20px !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.4;
+
+	letter-spacing: 0.06em;
+
+	text-transform: uppercase;
+
+	color: var(--arcn-heading);
+}
+
+.arcn-nav-editor-note {
+	display: none;
+}
+
+.arcn-page-nav {
+	display: grid;
+
+	gap: 18px;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.arcn-page-nav a {
+	display: block;
+
+	margin: 0;
+
+	padding: 0 0 5px;
+
+	border-bottom: 1px solid var(--arcn-heading);
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.45;
+
+	color: var(--arcn-link);
+
+	text-decoration: none;
+
+	transition:
+		color 160ms ease,
+		border-color 160ms ease;
+}
+
+.arcn-page-nav a:hover,
+.arcn-page-nav a:focus-visible,
+.arcn-page-nav a.is-active {
+	color: var(--arcn-red);
+
+	border-color: var(--arcn-red);
+}
+
+.arcn-page-nav a:focus-visible {
+	outline: 2px solid var(--arcn-red);
+	outline-offset: 4px;
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.arcn-page-content {
+	min-width: 0;
+}
+
+
+/* =========================================================
+   MAJOR CONTENT SECTIONS
+   ========================================================= */
+
+.arcn-content-section {
+	position: relative;
+
+	width: 100%;
+
+	margin: 0 !important;
+
+	padding-top: 32px;
+	padding-bottom: 32px;
+
+	border-top: 1px solid var(--arcn-border);
+
+	scroll-margin-top:
+		var(--arcn-anchor-offset);
+}
+
+.arcn-content-section:last-child {
+	border-bottom: 1px solid var(--arcn-border);
+}
+
+
+/*
+ * Makes the selected anchor section visually clear.
+ * No layout movement is caused.
+ */
+
+.arcn-content-section.is-anchor-target {
+	box-shadow:
+		inset 0 2px 0
+		var(--arcn-red);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.arcn-section-heading {
+	position: relative;
+
+	margin: 0 0 20px !important;
+
+	padding: 0 0 14px 32px;
+
+	border-bottom: 1px solid var(--arcn-border);
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.4;
+
+	letter-spacing: 0;
+
+	color: var(--arcn-heading);
+}
+
+.arcn-section-heading::before {
+	content: "";
+
+	position: absolute;
+
+	top: 3px;
+	left: 0;
+
+	width: 14px;
+	height: 14px;
+
+	background: var(--arcn-red);
+}
+
+
+/* =========================================================
+   NAVIGATION LABEL
+   ========================================================= */
+
+/*
+ * The optional short navigation label is editor-only.
+ */
+
+.arcn-nav-label {
+	display: none;
+}
+
+
+/* =========================================================
+   SECTION CONTENT AREA
+   ========================================================= */
+
+/*
+ * Editors see one content area.
+ *
+ * Internally WordPress is still free to use the correct
+ * semantic Core blocks:
+ *
+ * Paragraph
+ * List
+ * Heading
+ * Image
+ * Quote
+ * Table
+ *
+ * The theme controls all spacing.
+ */
+
+.arcn-section-content {
+	display: flex;
+
+	flex-direction: column;
+
+	gap: 16px;
+
+	width: 100%;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.arcn-section-content > * {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+
+/* =========================================================
+   EMPTY CONTENT
+   ========================================================= */
+
+.arcn-section-content p:empty {
+	display: none;
+}
+
+
+/* =========================================================
+   DEFAULT PARAGRAPHS
+   ========================================================= */
+
+.arcn-content-section p:not(.arcn-nav-label) {
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+
+/*
+ * Default text is intentionally softer than pure black.
+ *
+ * If an editor explicitly chooses a WordPress text colour,
+ * the .has-text-color class prevents this default from
+ * overriding it.
+ */
+
+.arcn-content-section
+	p:not(.arcn-nav-label):not(.has-text-color) {
+	color: var(--arcn-text) !important;
+}
+
+
+/* =========================================================
+   SUBHEADINGS INSIDE CONTENT
+   ========================================================= */
+
+.arcn-section-content h2,
+.arcn-section-content h3,
+.arcn-section-content h4,
+.arcn-content-section
+	.wp-block-heading:not(.arcn-section-heading) {
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-weight: 700;
+	line-height: 1.4;
+
+	margin-bottom: 0 !important;
+}
+
+.arcn-section-content h2:not(.has-text-color),
+.arcn-section-content h3:not(.has-text-color),
+.arcn-section-content h4:not(.has-text-color),
+.arcn-content-section
+	.wp-block-heading:not(.arcn-section-heading):not(.has-text-color) {
+	color: var(--arcn-heading) !important;
+}
+
+.arcn-section-content h2,
+.arcn-section-content h3,
+.arcn-content-section
+	.wp-block-heading:not(.arcn-section-heading) {
+	margin-top: 8px !important;
+
+	font-size: 16px;
+}
+
+.arcn-section-content h4 {
+	margin-top: 6px !important;
+
+	font-size: 15px;
+}
+
+
+/* =========================================================
+   BULLETED LISTS
+   ========================================================= */
+
+/*
+ * Any UL anywhere inside an ARCN section receives
+ * the ARCN list styling.
+ *
+ * It therefore does not matter whether the list was:
+ *
+ * - created using + → List
+ * - converted from text
+ * - pasted from the old website
+ */
+
+.arcn-content-section ul,
+.arcn-content-section ul.wp-block-list,
+.arcn-page-content ul.wp-block-list {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+
+	padding-top: 0 !important;
+	padding-right: 0 !important;
+	padding-bottom: 0 !important;
+
+	padding-left: 24px !important;
+	padding-inline-start: 24px !important;
+
+	list-style: square outside !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+.arcn-content-section
+	ul:not(.has-text-color),
+.arcn-page-content
+	ul.wp-block-list:not(.has-text-color) {
+	color: var(--arcn-text) !important;
+}
+
+
+/* =========================================================
+   NUMBERED LISTS
+   ========================================================= */
+
+.arcn-content-section ol,
+.arcn-content-section ol.wp-block-list,
+.arcn-page-content ol.wp-block-list {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+
+	padding-top: 0 !important;
+	padding-right: 0 !important;
+	padding-bottom: 0 !important;
+
+	padding-left: 24px !important;
+	padding-inline-start: 24px !important;
+
+	list-style: decimal outside !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+.arcn-content-section
+	ol:not(.has-text-color),
+.arcn-page-content
+	ol.wp-block-list:not(.has-text-color) {
+	color: var(--arcn-text) !important;
+}
+
+
+/* =========================================================
+   LIST ITEMS
+   ========================================================= */
+
+.arcn-content-section li,
+.arcn-page-content .wp-block-list li {
+	margin: 0 !important;
+	padding: 0 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: inherit;
+	font-weight: 400;
+	line-height: 1.6;
+
+	color: inherit;
+}
+
+.arcn-content-section li + li,
+.arcn-page-content .wp-block-list li + li {
+	margin-top: 6px !important;
+}
+
+.arcn-content-section li::marker,
+.arcn-page-content .wp-block-list li::marker {
+	color: currentColor;
+
+	font-size: 0.9em;
+}
+
+
+/* =========================================================
+   NESTED LISTS
+   ========================================================= */
+
+.arcn-content-section li > ul,
+.arcn-content-section li > ol,
+.arcn-page-content
+	.wp-block-list
+	li > ul,
+.arcn-page-content
+	.wp-block-list
+	li > ol {
+	margin-top: 6px !important;
+	margin-bottom: 0 !important;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+/*
+ * Same visual style everywhere:
+ *
+ * paragraphs
+ * lists
+ * link-only paragraphs
+ * pasted links
+ */
+
+.arcn-content-section
+	a:not(.wp-element-button),
+.arcn-page-intro
+	a:not(.wp-element-button) {
+	color: var(--arcn-link) !important;
+
+	font: inherit;
+	line-height: inherit;
+
+	text-decoration-line: underline !important;
+	text-decoration-style: solid !important;
+	text-decoration-thickness: 1px !important;
+	text-decoration-color: currentColor !important;
+	text-underline-offset: 3px;
+
+	transition: color 160ms ease;
+}
+
+.arcn-content-section
+	a:not(.wp-element-button):hover,
+.arcn-content-section
+	a:not(.wp-element-button):focus-visible,
+.arcn-page-intro
+	a:not(.wp-element-button):hover,
+.arcn-page-intro
+	a:not(.wp-element-button):focus-visible {
+	color: var(--arcn-red) !important;
+}
+
+.arcn-content-section
+	a:not(.wp-element-button):focus-visible,
+.arcn-page-intro
+	a:not(.wp-element-button):focus-visible {
+	outline: 2px solid var(--arcn-red);
+	outline-offset: 3px;
+}
+
+
+/* =========================================================
+   STACKED LINK-ONLY PARAGRAPHS
+   ========================================================= */
+
+/*
+ * Example:
+ *
+ * Vienna.gv.at
+ * Bundeskanzleramt
+ * Österreich.gv.at
+ *
+ * Each can remain a normal Paragraph block containing
+ * one link. Consecutive link-only paragraphs are visually
+ * treated like lines of one text group rather than three
+ * heavily separated paragraphs.
+ */
+
+.arcn-section-content
+	> p:has(> a:only-child)
+	+ p:has(> a:only-child) {
+	margin-top: -16px !important;
+}
+
+
+/* =========================================================
+   CONTENT IMAGES
+   ========================================================= */
+
+.arcn-content-section .wp-block-image {
+	width: 100%;
+
+	margin: 4px 0 !important;
+}
+
+.arcn-content-section .wp-block-image img {
+	display: block;
+
+	max-width: 100%;
+	height: auto;
+
+	border-radius: 0;
+}
+
+.arcn-content-section figcaption {
+	margin: 8px 0 0 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 11px;
+	font-weight: 400;
+	line-height: 1.45;
+
+	color: var(--arcn-muted);
+}
+
+
+/* =========================================================
+   QUOTES
+   ========================================================= */
+
+.arcn-content-section blockquote {
+	margin: 4px 0 !important;
+
+	padding: 4px 0 4px 20px;
+
+	border-left: 3px solid var(--arcn-red);
+}
+
+.arcn-content-section blockquote p {
+	margin: 0 !important;
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.arcn-content-section .wp-block-table {
+	width: 100%;
+
+	margin: 4px 0 !important;
+
+	overflow-x: auto;
+}
+
+.arcn-content-section table {
+	width: 100%;
+
+	border-collapse: collapse;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 15px;
+	line-height: 1.5;
+
+	color: var(--arcn-text);
+}
+
+.arcn-content-section th,
+.arcn-content-section td {
+	padding: 10px 12px;
+
+	border: 1px solid #d7d7d7;
+
+	text-align: left;
+}
+
+.arcn-content-section th {
+	font-weight: 700;
+
+	color: var(--arcn-heading);
+
+	background: var(--arcn-surface);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+	.arcn-standard-page {
+		--arcn-anchor-offset: 20px;
+	}
+
+	.arcn-page-body {
+		grid-template-columns:
+			minmax(180px, 1fr)
+			minmax(0, 2fr);
+
+		gap: 20px;
+	}
+
+	.arcn-page-title {
+		font-size: 16px;
+	}
+
+	.arcn-page-intro__text,
+	.arcn-content-section
+		p:not(.arcn-nav-label),
+	.arcn-content-section ul,
+	.arcn-content-section ol,
+	.arcn-section-content h2,
+	.arcn-section-content h3,
+	.arcn-section-heading {
+		font-size: 14px;
+	}
+
+	.arcn-section-content h4 {
+		font-size: 13px;
+	}
+
+	.arcn-page-nav a {
+		font-size: 14px;
+	}
+
+	.arcn-content-section {
+		padding-top: 28px;
+		padding-bottom: 28px;
+	}
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+	.arcn-page-intro,
+	.arcn-page-body {
+		width: 90%;
+	}
+
+	.arcn-page-intro__columns {
+		display: flex;
+
+		flex-direction: column-reverse;
+	}
+
+	.arcn-page-intro__copy,
+	.arcn-page-intro__media {
+		width: 100%;
+
+		flex-basis: 100% !important;
+	}
+
+	.arcn-page-intro__copy {
+		padding: 28px 0;
+	}
+
+	.arcn-hero-image-slot {
+		min-height: 220px;
+	}
+
+	.arcn-page-body {
+		display: block;
+
+		padding-top: 30px;
+		padding-bottom: 40px;
+	}
+
+	.arcn-page-sidebar {
+		display: none;
+	}
+
+	.arcn-content-section {
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+
+	.arcn-section-heading {
+		margin-bottom: 18px !important;
+
+		padding-left: 28px;
+
+		font-size: 14px;
+	}
+
+	.arcn-section-heading::before {
+		top: 3px;
+
+		width: 12px;
+		height: 12px;
+	}
+
+	.arcn-section-content {
+		gap: 14px;
+	}
+
+	.arcn-content-section
+		p:not(.arcn-nav-label),
+	.arcn-content-section ul,
+	.arcn-content-section ol,
+	.arcn-section-content h2,
+	.arcn-section-content h3 {
+		font-size: 14px;
+	}
+
+	.arcn-section-content h4 {
+		font-size: 13px;
+	}
+}

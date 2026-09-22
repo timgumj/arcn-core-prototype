@@ -1,0 +1,1399 @@
+/* =========================================================
+   ARCN HOMEPAGE
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+.arcn-home {
+	--arcn-body-text: #333333;
+	--arcn-heading-text: #000000;
+	--arcn-red: #c8102e;
+	--arcn-light: #fafafa;
+	--arcn-white: #ffffff;
+
+	width: 100% !important;
+	max-width: none !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	color: var(--arcn-body-text);
+	background: var(--arcn-white);
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+}
+
+
+.arcn-home,
+.arcn-home *,
+.arcn-home *::before,
+.arcn-home *::after {
+	box-sizing: border-box;
+}
+
+
+/* =========================================================
+   GUTENBERG LAYOUT RESET
+   ========================================================= */
+
+.arcn-home .wp-block-group,
+.arcn-home .wp-block-cover {
+	box-sizing: border-box;
+}
+
+
+.arcn-home-hero,
+.arcn-home-welcome,
+.arcn-home-services,
+.arcn-home-events,
+.arcn-home-partners {
+	width: 100% !important;
+	max-width: none !important;
+}
+
+
+.arcn-home-hero__inner,
+.arcn-home-hero__intro,
+.arcn-home-hero__slider,
+.arcn-home-welcome__inner,
+.arcn-home-services__inner,
+.arcn-home-services__grid,
+.arcn-home-service-card,
+.arcn-home-service-card__media,
+.arcn-home-service-card__content,
+.arcn-home-events__inner,
+.arcn-home-newsletter__panel,
+.arcn-home-partners__inner,
+.arcn-home-partner-row,
+.arcn-home-partner {
+	max-width: none !important;
+}
+
+
+.arcn-home
+:is(
+	.arcn-home-hero,
+	.arcn-home-hero__inner,
+	.arcn-home-hero__intro,
+	.arcn-home-hero__slider,
+	.arcn-home-welcome,
+	.arcn-home-welcome__inner,
+	.arcn-home-services,
+	.arcn-home-services__inner,
+	.arcn-home-services__grid,
+	.arcn-home-service-card,
+	.arcn-home-service-card__media,
+	.arcn-home-service-card__content,
+	.arcn-home-events,
+	.arcn-home-events__inner,
+	.arcn-home-newsletter__panel,
+	.arcn-home-partners,
+	.arcn-home-partners__inner,
+	.arcn-home-partner-row,
+	.arcn-home-partner
+) {
+	--wp--style--block-gap: 0;
+}
+
+
+/* =========================================================
+   GENERAL TYPOGRAPHY
+   ========================================================= */
+
+.arcn-home p {
+	color: var(--arcn-body-text);
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.4em;
+}
+
+
+.arcn-home h1,
+.arcn-home h2,
+.arcn-home h3,
+.arcn-home h4,
+.arcn-home h5,
+.arcn-home h6 {
+	color: var(--arcn-heading-text);
+}
+
+
+.arcn-home a {
+	color: inherit;
+}
+
+
+.arcn-home-section-title {
+	margin: 0 !important;
+	padding: 0;
+
+	color: #000000;
+
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1em;
+
+	letter-spacing: 4px;
+	text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO
+   Original Divi:
+   row = 90%
+   left = 30%
+   right = 70%
+   ========================================================= */
+
+.arcn-home-hero {
+	width: 100% !important;
+	max-width: none !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	background: transparent;
+}
+
+
+.arcn-home-hero__inner {
+	display: grid !important;
+
+	grid-template-columns:
+		minmax(0, 30%)
+		minmax(0, 70%);
+
+	align-items: center;
+
+	width: 90% !important;
+	max-width: 90% !important;
+
+	margin:
+		0
+		auto !important;
+
+	padding: 0 !important;
+
+	background: #fafafa;
+}
+
+
+/* =========================================================
+   HERO LEFT COLUMN
+   ========================================================= */
+
+.arcn-home-hero__intro {
+	display: flex !important;
+
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+
+	width: 100% !important;
+	height: 100%;
+
+	margin: 0 !important;
+
+	/* Equal desktop insets for the heading and description. */
+	padding: 0 30px !important;
+
+	background: #fafafa;
+}
+
+
+.arcn-home-hero__title {
+	margin:
+		0
+		0
+		16px !important;
+
+	padding: 0;
+
+	color: #000000;
+
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1em;
+}
+
+
+.arcn-home-hero__description {
+	margin: 0 !important;
+	padding: 0;
+
+	color: var(--arcn-body-text);
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.4em;
+}
+
+
+.arcn-home-hero__description a {
+	color: var(--arcn-body-text);
+
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+}
+
+
+/* =========================================================
+   HERO RIGHT COLUMN
+   ========================================================= */
+
+.arcn-home-hero__slider {
+	display: block !important;
+
+	width: 100% !important;
+	height: 100%;
+
+	min-width: 0;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	background: #fafafa;
+}
+
+
+.arcn-home-hero__slider > * {
+	width: 100% !important;
+	max-width: none !important;
+
+	margin: 0 !important;
+}
+
+
+/* =========================================================
+   SLIDER EDITOR
+   ========================================================= */
+
+.arcn-hero-slider-editor {
+	width: 100%;
+
+	margin: 0;
+	padding: 20px;
+
+	background: #ffffff;
+
+	border: 1px solid #d8d8d8;
+}
+
+
+.arcn-hero-slider-editor__header {
+	margin-bottom: 20px;
+}
+
+
+.arcn-hero-slider-editor__title {
+	margin:
+		0
+		0
+		6px;
+
+	font-size: 16px;
+	font-weight: 600;
+}
+
+
+.arcn-hero-slider-editor__description {
+	margin: 0;
+
+	color: #333333 !important;
+
+	font-size: 13px !important;
+}
+
+
+.arcn-hero-slider-editor__slide {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+
+	border-bottom: 1px solid #dddddd;
+}
+
+
+.arcn-hero-slider-editor__slide:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+
+	border-bottom: 0;
+}
+
+
+.arcn-hero-slider-editor__slide-title {
+	margin:
+		0
+		0
+		12px;
+
+	font-size: 13px;
+	font-weight: 600;
+
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+
+/* =========================================================
+   WELCOME
+   ONLY HOMEPAGE SECTION WHERE ALL TEXT IS BLACK
+   ========================================================= */
+
+.arcn-home-welcome {
+	width: 100% !important;
+
+	margin: 0 !important;
+
+	padding:
+		100px
+		0
+		50px !important;
+
+	background: #ffffff;
+}
+
+
+.arcn-home-welcome__inner {
+	width: 70% !important;
+	max-width: 70% !important;
+
+	margin:
+		0
+		auto !important;
+
+	padding:
+		0
+		30px !important;
+
+	background: #ffffff;
+
+	border-left: 1px solid #c8102e;
+	border-right: 1px solid #c8102e;
+}
+
+
+.arcn-home-welcome__inner,
+.arcn-home-welcome__inner p,
+.arcn-home-welcome__inner a,
+.arcn-home-welcome__inner strong,
+.arcn-home-welcome__inner em {
+	color: #000000 !important;
+}
+
+
+.arcn-home-welcome__title {
+	margin:
+		0
+		0
+		20px !important;
+
+	padding: 0;
+
+	color: #000000;
+
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.4em;
+}
+
+
+.arcn-home-welcome__inner p {
+	margin:
+		0
+		0
+		1em !important;
+
+	padding: 0;
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.4em;
+}
+
+
+.arcn-home-welcome__inner p:last-child {
+	margin-bottom: 0 !important;
+}
+
+
+.arcn-home-welcome__signature {
+	text-align: left;
+}
+
+
+/* =========================================================
+   WHAT WE DO
+   ========================================================= */
+
+.arcn-home-services {
+	width: 100% !important;
+
+	margin:
+		50px
+		0 !important;
+
+	padding: 0 !important;
+
+	background: #ffffff;
+}
+
+
+.arcn-home-services__inner {
+	width: 100% !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+
+/* =========================================================
+   WHAT WE DO TITLE
+   Original heading row = 87%
+   ========================================================= */
+
+.arcn-home-services
+.arcn-home-section-title {
+	width: 87% !important;
+	max-width: 87% !important;
+
+	margin:
+		0
+		auto
+		30px !important;
+
+	text-align: left;
+}
+
+
+/* =========================================================
+   SERVICE GRID
+   Original card rows ≈ 89%
+   ========================================================= */
+
+.arcn-home-services__grid {
+	display: grid !important;
+
+	grid-template-columns:
+		repeat(
+			2,
+			minmax(0, 1fr)
+		);
+
+	width: 89% !important;
+	max-width: 89% !important;
+
+	margin:
+		0
+		auto !important;
+
+	padding: 0 !important;
+
+	gap: 0 !important;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+   ========================================================= */
+
+.arcn-home-service-card {
+	display: grid !important;
+
+	grid-template-columns:
+		minmax(0, 1fr)
+		minmax(0, 1fr);
+
+	align-items: stretch;
+
+	width: 100% !important;
+	min-width: 0;
+
+	margin: 0 !important;
+
+	padding: 20px !important;
+
+	background: #ffffff;
+}
+
+
+/* =========================================================
+   SERVICE IMAGE
+   ========================================================= */
+
+.arcn-home-service-card__media {
+	position: relative;
+
+	width: 100% !important;
+	min-width: 0;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: hidden;
+}
+
+
+.arcn-home-service-card__image {
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+
+.arcn-home-service-card__image img {
+	display: block;
+
+	width: 100% !important;
+	max-width: none !important;
+
+	height: 100% !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	aspect-ratio: 1 / 1;
+
+	object-fit: cover;
+
+	border: 0;
+}
+
+
+/* Exact Divi focal positions */
+
+.arcn-home-service-card:nth-child(1)
+.arcn-home-service-card__image img {
+	object-position: 17% 59%;
+}
+
+
+.arcn-home-service-card:nth-child(2)
+.arcn-home-service-card__image img {
+	object-position: 74% 41%;
+}
+
+
+.arcn-home-service-card:nth-child(3)
+.arcn-home-service-card__image img {
+	object-position: 43% 53%;
+}
+
+
+.arcn-home-service-card:nth-child(4)
+.arcn-home-service-card__image img {
+	object-position: 51% 48%;
+}
+
+
+/* =========================================================
+   SERVICE CONTENT
+   ========================================================= */
+
+.arcn-home-service-card__content {
+	display: flex !important;
+
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+
+	width: 100% !important;
+	min-width: 0;
+
+	margin: 0 !important;
+
+	padding: 30px !important;
+
+	background: #fafafa;
+}
+
+
+.arcn-home-service-card__title {
+	margin:
+		0
+		0
+		14px !important;
+
+	padding: 0;
+
+	color: #000000;
+
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.3em;
+
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+
+.arcn-home-service-card__content p {
+	margin:
+		0
+		0
+		16px !important;
+
+	padding: 0;
+
+	color: var(--arcn-body-text);
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.4em;
+}
+
+
+.arcn-home-service-card__content p:last-child {
+	margin-bottom: 0 !important;
+}
+
+
+/* =========================================================
+   SERVICE LINKS
+   ========================================================= */
+
+.arcn-home-service-card__link {
+	margin-top: auto !important;
+
+	padding-top: 8px !important;
+}
+
+
+.arcn-home-service-card__link a {
+	display: inline-block;
+
+	margin: 0;
+
+	padding:
+		0
+		0
+		3px;
+
+	color: #000000 !important;
+
+	border-bottom: 1px solid #c8102e;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1em;
+
+	letter-spacing: 3px;
+	text-transform: uppercase;
+
+	text-decoration: none !important;
+}
+
+
+.arcn-home-service-card__link a:hover,
+.arcn-home-service-card__link a:focus {
+	color: #000000 !important;
+
+	text-decoration: none !important;
+}
+
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+.arcn-home-events {
+	width: 100% !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+
+.arcn-home-events__inner {
+	width: 90% !important;
+	max-width: 90% !important;
+
+	margin:
+		0
+		auto !important;
+
+	padding: 0 !important;
+}
+
+
+.arcn-home-events
+.arcn-home-section-title {
+	margin:
+		0
+		0
+		20px
+		13px !important;
+}
+
+
+/*
+ * Event-list.css controls the component structure.
+ * Non-linked information follows standard-page grey.
+ */
+
+.arcn-home-events
+.arcn-event-list {
+	color: var(--arcn-body-text);
+}
+
+
+.arcn-home-events
+.arcn-event-list a {
+	color: #000000;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+   ========================================================= */
+
+.arcn-home-newsletter {
+	position: relative;
+
+	width: 90% !important;
+	max-width: 90% !important;
+
+	min-height: 0 !important;
+
+	margin:
+		50px
+		auto !important;
+
+	padding: 0 !important;
+
+	overflow: hidden;
+
+	background-position: center;
+	background-size: cover;
+}
+
+
+.arcn-home-newsletter
+.wp-block-cover__background {
+	opacity: 0 !important;
+}
+
+
+.arcn-home-newsletter
+.wp-block-cover__image-background {
+	position: absolute;
+
+	inset: 0;
+
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+	object-position: center;
+}
+
+
+.arcn-home-newsletter
+.wp-block-cover__inner-container {
+	position: relative;
+
+	z-index: 2;
+
+	display: flex !important;
+
+	align-items: stretch;
+	justify-content: flex-end;
+
+	width: 100% !important;
+	max-width: none !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+
+/* =========================================================
+   NEWSLETTER PANEL
+   40% desktop
+   ========================================================= */
+
+.arcn-home-newsletter__panel {
+	display: flex !important;
+
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+
+	width: 40% !important;
+	max-width: 40% !important;
+
+	margin:
+		0
+		0
+		0
+		auto !important;
+
+	padding:
+		4%
+		5% !important;
+
+	background:
+		rgba(
+			255,
+			255,
+			255,
+			0.8
+		);
+}
+
+
+.arcn-home-newsletter__title {
+	margin:
+		0
+		0
+		10px !important;
+
+	color: #000000;
+
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.4em;
+
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+
+.arcn-home-newsletter__panel p {
+	margin:
+		0
+		0
+		10px !important;
+
+	color: var(--arcn-body-text);
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.4em;
+}
+
+
+.arcn-home-newsletter__link {
+	margin-top: 10px !important;
+}
+
+
+.arcn-home-newsletter__link a {
+	display: inline-block;
+
+	padding-bottom: 3px;
+
+	color: #000000 !important;
+
+	border-bottom: 1px solid #000000;
+
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1em;
+
+	letter-spacing: 2px;
+	text-transform: uppercase;
+
+	text-decoration: none !important;
+}
+
+
+/* =========================================================
+   SPONSORS
+   ========================================================= */
+
+.arcn-home-partners {
+	width: 100% !important;
+
+	margin:
+		50px
+		0 !important;
+
+	padding:
+		50px
+		0
+		50px
+		80px !important;
+
+	background: #ffffff;
+}
+
+
+.arcn-home-partners__inner {
+	width: 100% !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+
+.arcn-home-partners__title {
+	width: 90% !important;
+	max-width: 90% !important;
+
+	margin:
+		0
+		auto
+		20px !important;
+
+	color: #000000;
+
+	text-align: center;
+}
+
+
+/* =========================================================
+   SPONSOR ROWS
+   Desktop modules were 4/24 = 1/6
+   ========================================================= */
+
+.arcn-home-partner-row {
+	display: flex !important;
+
+	flex-wrap: nowrap;
+
+	align-items: center;
+	justify-content: center;
+
+	width: 70% !important;
+	max-width: 70% !important;
+
+	margin:
+		0
+		auto !important;
+
+	padding: 0 !important;
+
+	gap: 10px !important;
+}
+
+
+.arcn-home-partner-row--two {
+	margin-top: 20px !important;
+}
+
+
+.arcn-home-partner-row + .arcn-home-partner-row {
+	margin-top: 10px !important;
+}
+
+
+.arcn-home-partner {
+	flex:
+		0
+		1
+		calc(
+			(
+				100% - 50px
+			) / 6
+		);
+
+	min-width: 0;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+
+/* =========================================================
+   SPONSOR IMAGES
+   Preserve image proportions and keep borders close to the image.
+   ========================================================= */
+
+.arcn-home-partner__image {
+	display: flex !important;
+
+	align-items: center;
+	justify-content: center;
+
+	width: 100% !important;
+	max-width: 100% !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: hidden;
+
+	background: #ffffff;
+
+	border: 0;
+}
+
+
+.arcn-home-partner__image img {
+	display: block;
+
+	width: 100% !important;
+	max-width: 100% !important;
+
+	height: auto !important;
+
+	margin: 0 !important;
+	padding: 1px !important;
+
+	object-fit: contain !important;
+	object-position: center center;
+
+	border: 1px solid #000000 !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media only screen and (max-width: 980px) {
+
+	.arcn-home p {
+		font-size: 14px;
+	}
+
+
+	.arcn-home-section-title {
+		font-size: 16px;
+	}
+
+
+	/* HERO */
+
+	.arcn-home-hero__inner {
+		grid-template-columns:
+			minmax(0, 32%)
+			minmax(0, 64%);
+
+		column-gap: 4%;
+
+		width: 90% !important;
+		max-width: 90% !important;
+	}
+
+
+	.arcn-home-hero__intro {
+		padding:
+			0
+			0
+			0
+			58px !important;
+	}
+
+
+	.arcn-home-hero__title {
+		font-size: 16px;
+	}
+
+
+	.arcn-home-hero__description {
+		font-size: 14px;
+	}
+
+
+	/* WELCOME */
+
+	.arcn-home-welcome {
+		padding:
+			50px
+			0 !important;
+	}
+
+
+	.arcn-home-welcome__inner {
+		width: 80% !important;
+		max-width: 80% !important;
+
+		padding:
+			0
+			30px !important;
+	}
+
+
+	.arcn-home-welcome__title {
+		font-size: 16px;
+	}
+
+
+	.arcn-home-welcome__inner p {
+		font-size: 14px;
+	}
+
+
+	/* SERVICES */
+
+	.arcn-home-services
+	.arcn-home-section-title {
+		width: 90% !important;
+		max-width: 90% !important;
+	}
+
+
+	.arcn-home-services__grid {
+		grid-template-columns:
+			minmax(0, 1fr);
+
+		width: 90% !important;
+		max-width: 90% !important;
+	}
+
+
+	.arcn-home-service-card {
+		grid-template-columns:
+			minmax(0, 1fr)
+			minmax(0, 1fr);
+
+		padding:
+			0
+			0
+			30px !important;
+	}
+
+
+	/* NEWSLETTER */
+
+	.arcn-home-newsletter__panel {
+		width: 70% !important;
+		max-width: 70% !important;
+	}
+
+
+	.arcn-home-newsletter__title {
+		font-size: 18px;
+	}
+
+
+	/* SPONSORS */
+
+	.arcn-home-partners {
+		padding:
+			50px
+			40px !important;
+	}
+
+
+	.arcn-home-partner-row {
+		flex-wrap: wrap;
+
+		width: 100% !important;
+		max-width: 100% !important;
+
+		gap: 10px !important;
+	}
+
+
+	.arcn-home-partner {
+		flex:
+			0
+			1
+			calc(
+				(
+					100% - 20px
+				) / 3
+			);
+	}
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media only screen and (max-width: 767px) {
+
+	/* HERO */
+
+	.arcn-home-hero__inner {
+		display: flex !important;
+
+		flex-direction: column-reverse;
+
+		align-items: flex-start;
+
+		width: 90% !important;
+		max-width: 90% !important;
+
+		margin:
+			0
+			auto !important;
+
+		padding: 0 !important;
+
+		gap: 20px !important;
+
+		background: transparent;
+	}
+
+
+	.arcn-home-hero__intro {
+		width: 100% !important;
+
+		padding: 0 !important;
+
+		background: transparent;
+	}
+
+
+	.arcn-home-hero__slider {
+		width: 100% !important;
+	}
+
+
+	.arcn-home-hero__title {
+		margin-bottom: 14px !important;
+
+		font-size: 16px;
+	}
+
+
+	.arcn-home-hero__description {
+		font-size: 14px;
+	}
+
+
+	/* WELCOME */
+
+	.arcn-home-welcome__inner {
+		width: 90% !important;
+		max-width: 90% !important;
+
+		padding:
+			0
+			16px !important;
+
+		border-left: 1px solid #c8102e;
+		border-right: 0;
+	}
+
+
+	/* SERVICES */
+
+	.arcn-home-services {
+		margin:
+			50px
+			0
+			0 !important;
+	}
+
+
+	.arcn-home-services__grid {
+		width: 90% !important;
+		max-width: 90% !important;
+	}
+
+
+	.arcn-home-service-card {
+		grid-template-columns:
+			minmax(0, 1fr);
+
+		padding:
+			0
+			0
+			30px !important;
+	}
+
+
+	.arcn-home-service-card__content {
+		padding: 30px !important;
+	}
+
+
+	/* EVENTS */
+
+	.arcn-home-events {
+		padding:
+			50px
+			0 !important;
+	}
+
+
+	.arcn-home-events
+	.arcn-home-section-title {
+		margin:
+			0
+			0
+			20px
+			0 !important;
+	}
+
+
+	/* NEWSLETTER */
+
+	.arcn-home-newsletter {
+		width: 90% !important;
+		max-width: 90% !important;
+	}
+
+
+	.arcn-home-newsletter__panel {
+		width: 60% !important;
+		max-width: 60% !important;
+	}
+
+
+	.arcn-home-newsletter__title {
+		font-size: 18px;
+	}
+
+
+	/* SPONSORS */
+
+	.arcn-home-partners {
+		padding:
+			50px
+			0
+			50px
+			20px !important;
+	}
+
+
+	.arcn-home-partners__title {
+		width: 90% !important;
+		max-width: 90% !important;
+	}
+
+
+	.arcn-home-partner-row {
+		width: 90% !important;
+		max-width: 90% !important;
+
+		gap: 10px !important;
+	}
+
+
+	.arcn-home-partner {
+		flex:
+			0
+			1
+			calc(
+				(
+					100% - 10px
+				) / 2
+			);
+	}
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media only screen and (max-width: 479px) {
+
+	.arcn-home-newsletter__panel {
+		width: 70% !important;
+		max-width: 70% !important;
+	}
+
+
+}

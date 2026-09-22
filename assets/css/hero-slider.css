@@ -1,0 +1,853 @@
+/* =========================================================
+   ARCN HERO SLIDER
+   ========================================================= */
+
+.arcn-hero-slider {
+	--arcn-header-height: 120px;
+	--arcn-slider-reduction: 40px;
+
+	--arcn-control-padding-inline: 18px;
+	--arcn-control-padding-block: 18px;
+
+	--arcn-control-gap: 16px;
+
+	--arcn-thumbnail-width: 110px;
+	--arcn-thumbnail-height: 78px;
+
+	--arcn-slider-text: #ffffff;
+
+	--arcn-slider-border:
+		rgba(
+			255,
+			255,
+			255,
+			0.92
+		);
+
+	--arcn-slider-progress-background:
+		rgba(
+			255,
+			255,
+			255,
+			0.28
+		);
+
+	position: relative;
+
+	display: block;
+
+	width: 100% !important;
+	max-width: none !important;
+
+	height:
+		calc(
+			100vh
+			-
+			var(--arcn-header-height)
+			-
+			var(--arcn-slider-reduction)
+		);
+
+	height:
+		calc(
+			100svh
+			-
+			var(--arcn-header-height)
+			-
+			var(--arcn-slider-reduction)
+		);
+
+	min-height: 380px;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: hidden;
+
+	background: transparent;
+
+	isolation: isolate;
+
+	outline: none;
+
+	touch-action: pan-y;
+
+	font-family:
+		Inter,
+		Helvetica,
+		Arial,
+		Lucida,
+		sans-serif;
+}
+
+
+.arcn-hero-slider,
+.arcn-hero-slider *,
+.arcn-hero-slider *::before,
+.arcn-hero-slider *::after {
+	box-sizing: border-box;
+}
+
+
+.arcn-hero-slider:focus-visible {
+	outline: 2px solid #ffffff;
+	outline-offset: -4px;
+}
+
+
+/* =========================================================
+   STAGE
+   ========================================================= */
+
+.arcn-slider-stage {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+	padding: 0;
+
+	overflow: hidden;
+}
+
+
+/* =========================================================
+   SLIDES
+   ========================================================= */
+
+.arcn-slider-slide {
+	position: absolute;
+
+	inset: 0;
+
+	width: 100%;
+	height: 100%;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	opacity: 0;
+	visibility: hidden;
+
+	pointer-events: none;
+
+	transition:
+		opacity 700ms ease,
+		visibility 700ms ease;
+}
+
+
+.arcn-slider-slide.is-active {
+	z-index: 2;
+
+	opacity: 1;
+	visibility: visible;
+
+	pointer-events: auto;
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.arcn-slider-image-area {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+
+	min-width: 0;
+	min-height: 0;
+
+	margin: 0;
+	padding: 0;
+
+	overflow: hidden;
+}
+
+
+.arcn-slider-image {
+	position: absolute;
+
+	inset: 0;
+
+	display: block;
+
+	width: 100% !important;
+	max-width: none !important;
+
+	height: 100% !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	border: 0;
+
+	object-fit: cover;
+	object-position: center center;
+
+	user-select: none;
+
+	-webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   OVERLAY
+   ========================================================= */
+
+.arcn-slider-overlay {
+	position: absolute;
+
+	inset: 0;
+
+	z-index: 10;
+
+	pointer-events: none;
+}
+
+
+/* =========================================================
+   SOURCE / CONTROLS
+   ========================================================= */
+
+.arcn-slider-source-panel {
+	position: absolute;
+
+	left:
+		var(
+			--arcn-control-padding-inline
+		);
+
+	bottom:
+		var(
+			--arcn-control-padding-block
+		);
+
+	display: flex;
+
+	flex-direction: column;
+
+	gap: 10px;
+
+	width:
+		min(
+			calc(
+				80%
+				-
+				(
+					var(
+						--arcn-control-padding-inline
+					)
+					*
+					2
+				)
+			),
+			calc(
+				100%
+				-
+				(
+					var(
+						--arcn-control-padding-inline
+					)
+					*
+					2
+				)
+				-
+				var(
+					--arcn-thumbnail-width
+				)
+				-
+				var(
+					--arcn-control-gap
+				)
+				-
+				10px
+			)
+		);
+
+	max-width: 920px;
+	min-width: 220px;
+
+	color: var(--arcn-slider-text);
+
+	pointer-events: auto;
+
+	text-shadow:
+		0
+		1px
+		2px
+		rgba(
+			0,
+			0,
+			0,
+			0.35
+		);
+}
+
+
+.arcn-slider-source-text {
+	margin: 0 !important;
+	padding: 0 !important;
+
+	color: #ffffff !important;
+
+	font-size: 12px !important;
+	font-weight: 400;
+	line-height: 1.35;
+
+	letter-spacing: 0.02em;
+
+	opacity: 0.95;
+
+	overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   META ROW
+   ========================================================= */
+
+.arcn-slider-meta-row {
+	display: grid;
+
+	grid-template-columns:
+		auto
+		auto
+		minmax(
+			120px,
+			1fr
+		)
+		auto
+		auto;
+
+	align-items: center;
+
+	gap: 12px;
+
+	min-height: 26px;
+}
+
+
+.arcn-slider-counter {
+	color: #ffffff;
+
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1;
+
+	letter-spacing: 0.1em;
+
+	white-space: nowrap;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.arcn-slider-progress {
+	position: relative;
+
+	width: 100%;
+	height: 1px;
+
+	overflow: hidden;
+
+	background:
+		var(
+			--arcn-slider-progress-background
+		);
+}
+
+
+.arcn-slider-progress-bar {
+	position: absolute;
+
+	top: 0;
+	left: 0;
+
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	background:
+		rgba(
+			255,
+			255,
+			255,
+			0.98
+		);
+
+	transform: scaleX(0);
+	transform-origin: left center;
+
+	will-change: transform;
+}
+
+
+/* =========================================================
+   CONTROL BUTTONS
+   ========================================================= */
+
+.arcn-slider-icon-button {
+	appearance: none;
+	-webkit-appearance: none;
+
+	display: inline-flex;
+
+	align-items: center;
+	justify-content: center;
+
+	width: 22px;
+	height: 22px;
+
+	margin: 0;
+	padding: 0;
+
+	border: 0;
+	border-radius: 0;
+
+	background: transparent;
+
+	color: #ffffff;
+
+	cursor: pointer;
+
+	opacity: 0.9;
+
+	pointer-events: auto;
+
+	text-shadow:
+		0
+		1px
+		2px
+		rgba(
+			0,
+			0,
+			0,
+			0.35
+		);
+
+	transition:
+		opacity 220ms ease,
+		transform 220ms ease;
+}
+
+
+.arcn-slider-icon-button:hover {
+	opacity: 1;
+
+	transform:
+		translateY(
+			-1px
+		);
+}
+
+
+.arcn-slider-icon-button:focus-visible,
+.arcn-slider-thumbnail:focus-visible {
+	opacity: 1;
+
+	outline: 2px solid #ffffff;
+	outline-offset: 2px;
+}
+
+
+.arcn-slider-icon-button svg {
+	display: block;
+
+	width: 18px;
+	height: 18px;
+
+	fill: none;
+
+	stroke: currentColor;
+	stroke-width: 1.6;
+
+	stroke-linecap: square;
+	stroke-linejoin: miter;
+}
+
+
+.arcn-slider-icon-button
+.arcn-slider-play-shape {
+	display: none;
+}
+
+
+.arcn-slider-icon-button.is-paused
+.arcn-slider-pause-bars {
+	display: none;
+}
+
+
+.arcn-slider-icon-button.is-paused
+.arcn-slider-play-shape {
+	display: block;
+}
+
+
+/* =========================================================
+   DESKTOP THUMBNAILS
+   ========================================================= */
+
+.arcn-slider-thumbnails {
+	position: absolute;
+
+	top: 50%;
+
+	right:
+		var(
+			--arcn-control-padding-inline
+		);
+
+	z-index: 11;
+
+	display: flex;
+
+	flex-direction: column;
+
+	gap: 10px;
+
+	width:
+		var(
+			--arcn-thumbnail-width
+		);
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+
+	transform:
+		translateY(
+			-50%
+		);
+
+	pointer-events: auto;
+}
+
+
+.arcn-slider-thumbnail-item {
+	margin: 0;
+	padding: 0;
+}
+
+
+.arcn-slider-thumbnail {
+	appearance: none;
+	-webkit-appearance: none;
+
+	position: relative;
+
+	display: block;
+
+	width: 100%;
+
+	height:
+		var(
+			--arcn-thumbnail-height
+		);
+
+	margin: 0;
+	padding: 0;
+
+	overflow: hidden;
+
+	border:
+		1px solid
+		var(
+			--arcn-slider-border
+		);
+
+	border-radius: 0;
+
+	background: transparent;
+
+	cursor: pointer;
+
+	opacity: 0.78;
+
+	transition:
+		opacity 220ms ease,
+		transform 220ms ease,
+		border-color 220ms ease;
+}
+
+
+.arcn-slider-thumbnail:hover,
+.arcn-slider-thumbnail.is-active {
+	opacity: 1;
+
+	border-color: #ffffff;
+}
+
+
+.arcn-slider-thumbnail:hover {
+	transform:
+		translateX(
+			-2px
+		);
+}
+
+
+.arcn-slider-thumbnail-image {
+	display: block;
+
+	width: 100% !important;
+	max-width: none !important;
+
+	height: 100% !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	border: 0;
+
+	object-fit: cover;
+	object-position: center center;
+
+	user-select: none;
+
+	-webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media only screen and (max-width: 980px) {
+
+	.arcn-hero-slider {
+		--arcn-header-height: 105px;
+		--arcn-slider-reduction: 60px;
+
+		--arcn-control-padding-inline: 16px;
+		--arcn-control-padding-block: 16px;
+
+		min-height: 330px;
+	}
+
+
+	.arcn-slider-thumbnails {
+		display: none;
+	}
+
+
+	.arcn-slider-source-panel {
+		left:
+			var(
+				--arcn-control-padding-inline
+			);
+
+		right: auto;
+
+		bottom:
+			var(
+				--arcn-control-padding-block
+			);
+
+		width:
+			calc(
+				80%
+				-
+				(
+					var(
+						--arcn-control-padding-inline
+					)
+					*
+					2
+				)
+			);
+
+		max-width: 920px;
+		min-width: 220px;
+	}
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media only screen and (max-width: 767px) {
+
+	.arcn-hero-slider {
+		--arcn-header-height: 90px;
+		--arcn-slider-reduction: 90px;
+		--arcn-mobile-edge: 10px;
+
+		min-height: 280px;
+	}
+
+
+	.arcn-slider-source-panel {
+		left:
+			var(
+				--arcn-mobile-edge
+			);
+
+		right:
+			var(
+				--arcn-mobile-edge
+			);
+
+		bottom:
+			var(
+				--arcn-mobile-edge
+			);
+
+		width: auto;
+
+		max-width: none;
+		min-width: 0;
+
+		margin: 0;
+		padding: 0;
+
+		gap: 10px;
+	}
+
+
+	.arcn-slider-source-text {
+		display: block;
+
+		width: 100%;
+		max-width: 100%;
+
+		font-size: 11px !important;
+		line-height: 1.35;
+	}
+
+
+	.arcn-slider-meta-row {
+		display: grid;
+
+		grid-template-columns:
+			auto
+			auto
+			minmax(
+				0,
+				1fr
+			)
+			auto
+			auto;
+
+		grid-template-rows:
+			1px
+			22px;
+
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+
+		margin: 0;
+		padding: 0;
+
+		column-gap: 10px;
+		row-gap: 10px;
+
+		align-items: center;
+	}
+
+
+	.arcn-slider-progress {
+		grid-column:
+			1
+			/
+			-1;
+
+		grid-row: 1;
+	}
+
+
+	.arcn-slider-prev {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+
+	.arcn-slider-counter {
+		grid-column: 2;
+		grid-row: 2;
+
+		font-size: 11px;
+	}
+
+
+	.arcn-slider-meta-row::after {
+		content: "";
+
+		grid-column: 3;
+		grid-row: 2;
+	}
+
+
+	.arcn-slider-toggle {
+		grid-column: 4;
+		grid-row: 2;
+	}
+
+
+	.arcn-slider-next {
+		grid-column: 5;
+		grid-row: 2;
+	}
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media only screen and (max-width: 479px) {
+
+	.arcn-hero-slider {
+		--arcn-header-height: 82px;
+		--arcn-slider-reduction: 110px;
+		--arcn-mobile-edge: 10px;
+
+		min-height: 260px;
+	}
+
+
+	.arcn-slider-meta-row {
+		column-gap: 8px;
+	}
+
+
+	.arcn-slider-icon-button {
+		width: 20px;
+		height: 20px;
+	}
+
+
+	.arcn-slider-icon-button svg {
+		width: 17px;
+		height: 17px;
+	}
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+	.arcn-slider-slide,
+	.arcn-slider-thumbnail,
+	.arcn-slider-icon-button {
+		transition: none;
+	}
+
+
+	.arcn-slider-progress-bar {
+		will-change: auto;
+	}
+}

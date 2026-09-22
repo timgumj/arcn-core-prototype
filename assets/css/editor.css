@@ -1,0 +1,641 @@
+/* =========================================================
+   ARCN GUTENBERG EDITOR
+   ========================================================= */
+
+.editor-styles-wrapper {
+	background: #f2f2f2;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	color: #333333;
+}
+
+
+/* =========================================================
+   MAIN CANVAS
+   ========================================================= */
+
+.editor-styles-wrapper .is-root-container {
+	padding-top: 30px;
+	padding-bottom: 100px;
+}
+
+.editor-styles-wrapper .arcn-standard-page {
+	width: min(
+		1400px,
+		calc(100% - 40px)
+	);
+
+	margin-left: auto;
+	margin-right: auto;
+
+	padding-bottom: 50px;
+
+	background: #ffffff;
+
+	box-shadow:
+		0 0 0 1px
+			rgba(0, 0, 0, 0.06),
+		0 15px 50px
+			rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.editor-styles-wrapper .arcn-page-intro {
+	position: relative;
+
+	width: 94%;
+
+	margin-top: 40px;
+
+	border-top: 4px solid #c8102e;
+
+	background: #fafafa;
+}
+
+.editor-styles-wrapper
+	.arcn-page-intro::before {
+	content: "PAGE INTRO";
+
+	position: absolute;
+
+	top: -28px;
+	left: 0;
+
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+
+	letter-spacing: 0.12em;
+
+	color: #777777;
+}
+
+.editor-styles-wrapper .arcn-page-title {
+	color: #000000;
+}
+
+.editor-styles-wrapper
+	.arcn-page-intro__text:not(.has-text-color) {
+	color: #333333 !important;
+}
+
+
+/* =========================================================
+   HERO IMAGE AREA
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-hero-image-slot {
+	position: relative;
+
+	display: block;
+
+	width: 100%;
+
+	min-height: 260px;
+
+	margin: 0 !important;
+	padding: 20px;
+
+	border: 1px dashed #aaaaaa;
+
+	background: #eeeeee;
+}
+
+.editor-styles-wrapper
+	.arcn-hero-image-slot::before {
+	content: "HERO IMAGE";
+
+	display: block;
+
+	margin-bottom: 8px;
+
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+
+	letter-spacing: 0.1em;
+
+	color: #666666;
+}
+
+.editor-styles-wrapper
+	.arcn-hero-image-slot::after {
+	content: "Click + and choose Image";
+
+	display: block;
+
+	margin-top: 8px;
+
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.4;
+
+	color: #777777;
+}
+
+.editor-styles-wrapper
+	.arcn-hero-image-slot.is-selected,
+.editor-styles-wrapper
+	.arcn-hero-image-slot.has-child-selected {
+	border-color: #c8102e;
+
+	background: #f8f8f8;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-hero-image-slot
+	.wp-block-image {
+	margin: 0 !important;
+}
+
+.editor-styles-wrapper
+	.arcn-hero-image-slot
+	.wp-block-image img {
+	display: block;
+
+	width: 100%;
+	height: auto;
+}
+
+
+/* =========================================================
+   PAGE BODY
+   ========================================================= */
+
+.editor-styles-wrapper .arcn-page-body {
+	width: 94%;
+
+	padding-top: 50px;
+	padding-bottom: 60px;
+}
+
+.editor-styles-wrapper
+	.arcn-page-body
+	> .block-editor-inner-blocks
+	> .block-editor-block-list__layout {
+	display: grid;
+
+	grid-template-columns:
+		minmax(190px, 1fr)
+		minmax(0, 3fr);
+
+	gap: 40px;
+
+	align-items: start;
+}
+
+
+/* =========================================================
+   LEFT NAVIGATION
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-page-sidebar {
+	position: relative;
+
+	top: auto;
+
+	margin: 0 !important;
+
+	padding: 24px 20px;
+
+	border: 1px solid #dddddd;
+
+	background: #fafafa;
+}
+
+.editor-styles-wrapper
+	.arcn-page-sidebar__title {
+	color: #000000;
+}
+
+.editor-styles-wrapper .arcn-page-nav {
+	display: block;
+
+	min-height: 100px;
+
+	margin: 0 !important;
+	padding: 16px !important;
+
+	border: 1px dashed #bbbbbb;
+
+	background: #ffffff;
+}
+
+.editor-styles-wrapper
+	.arcn-nav-editor-note {
+	display: block !important;
+
+	margin: 0 !important;
+
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.5;
+
+	color: #666666;
+}
+
+.editor-styles-wrapper
+	.arcn-nav-editor-note::before {
+	content: "AUTOMATIC NAVIGATION";
+
+	display: block;
+
+	margin-bottom: 8px;
+
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+
+	letter-spacing: 0.1em;
+
+	color: #c8102e;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT COLUMN
+   ========================================================= */
+
+.editor-styles-wrapper .arcn-page-content {
+	min-width: 0;
+}
+
+.editor-styles-wrapper
+	.arcn-page-content
+	> .block-editor-inner-blocks
+	> .block-editor-block-list__layout {
+	display: flex;
+
+	flex-direction: column;
+
+	gap: 20px;
+}
+
+
+/* =========================================================
+   CONTENT SECTION CARD
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-content-section {
+	position: relative;
+
+	display: block;
+
+	margin: 0 !important;
+
+	padding: 28px;
+
+	border: 1px solid #d8d8d8;
+	border-left: 4px solid #c8102e;
+
+	background: #ffffff;
+
+	box-shadow:
+		0 5px 18px
+		rgba(0, 0, 0, 0.035);
+}
+
+.editor-styles-wrapper
+	.arcn-content-section::before {
+	content: "CONTENT SECTION";
+
+	display: block;
+
+	margin-bottom: 16px;
+
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+
+	letter-spacing: 0.1em;
+
+	color: #777777;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-section-heading {
+	margin: 0 0 14px !important;
+
+	padding-bottom: 14px;
+
+	border-bottom: 1px solid #000000;
+
+	color: #000000;
+}
+
+
+/* =========================================================
+   OPTIONAL NAVIGATION LABEL
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-nav-label {
+	display: block !important;
+
+	min-height: 40px;
+
+	margin: 0 0 20px !important;
+
+	padding: 10px 12px;
+
+	border: 1px dashed #c8c8c8;
+	border-left: 3px solid #c8102e;
+
+	background: #fafafa;
+
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.4;
+
+	color: #333333;
+}
+
+.editor-styles-wrapper
+	.arcn-nav-label::before {
+	content: "NAVIGATION LABEL — OPTIONAL  ";
+
+	font-size: 9px;
+	font-weight: 700;
+
+	letter-spacing: 0.08em;
+
+	color: #c8102e;
+}
+
+
+/* =========================================================
+   SECTION CONTENT
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-section-content {
+	position: relative;
+
+	display: block;
+
+	min-height: 130px;
+
+	margin: 0 !important;
+	padding: 20px;
+
+	border: 1px solid #dddddd;
+
+	background: #fafafa;
+}
+
+.editor-styles-wrapper
+	.arcn-section-content::before {
+	content: "SECTION CONTENT";
+
+	display: block;
+
+	margin-bottom: 12px;
+
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+
+	letter-spacing: 0.09em;
+
+	color: #777777;
+}
+
+.editor-styles-wrapper
+	.arcn-section-content::after {
+	content: "Paste content here, or use + to add text, a list, heading, image or another block.";
+
+	display: block;
+
+	margin-top: 16px;
+
+	font-size: 11px;
+	font-weight: 400;
+	line-height: 1.45;
+
+	color: #888888;
+}
+
+.editor-styles-wrapper
+	.arcn-section-content.is-selected,
+.editor-styles-wrapper
+	.arcn-section-content.has-child-selected {
+	border-color: #999999;
+
+	background: #ffffff;
+
+	box-shadow:
+		0 0 0 1px
+		rgba(200, 16, 46, 0.08);
+}
+
+
+/* =========================================================
+   BLOCK RHYTHM INSIDE CONTENT AREA
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-section-content
+	> .block-editor-inner-blocks
+	> .block-editor-block-list__layout {
+	display: flex;
+
+	flex-direction: column;
+
+	gap: 16px;
+}
+
+.editor-styles-wrapper
+	.arcn-section-content
+	> .block-editor-inner-blocks
+	> .block-editor-block-list__layout
+	> .wp-block {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+
+/* =========================================================
+   BLOCK INSERTER
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-section-content
+	.block-list-appender {
+	position: relative !important;
+
+	display: flex !important;
+
+	width: 100%;
+
+	margin-top: 18px !important;
+
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+.editor-styles-wrapper
+	.arcn-section-content
+	.block-list-appender__toggle,
+.editor-styles-wrapper
+	.arcn-section-content
+	.block-editor-button-block-appender {
+	display: flex !important;
+
+	align-items: center !important;
+	justify-content: center !important;
+
+	width: 100% !important;
+	max-width: none !important;
+
+	min-height: 42px !important;
+
+	margin: 0 !important;
+
+	border: 1px dashed #aaaaaa !important;
+
+	background: #ffffff !important;
+
+	color: #111111 !important;
+}
+
+.editor-styles-wrapper
+	.arcn-section-content
+	.block-list-appender__toggle:hover,
+.editor-styles-wrapper
+	.arcn-section-content
+	.block-editor-button-block-appender:hover {
+	border-color: #c8102e !important;
+
+	background: #fffafa !important;
+
+	color: #c8102e !important;
+}
+
+
+/* =========================================================
+   BODY TEXT
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-content-section
+	p:not(.arcn-nav-label):not(.has-text-color) {
+	color: #333333 !important;
+}
+
+
+/* =========================================================
+   LISTS IN EDITOR
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-content-section ul,
+.editor-styles-wrapper
+	.arcn-content-section ol {
+	padding-left: 24px !important;
+
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+.editor-styles-wrapper
+	.arcn-content-section
+	ul:not(.has-text-color),
+.editor-styles-wrapper
+	.arcn-content-section
+	ol:not(.has-text-color) {
+	color: #333333 !important;
+}
+
+.editor-styles-wrapper
+	.arcn-content-section ul {
+	list-style:
+		square outside !important;
+}
+
+.editor-styles-wrapper
+	.arcn-content-section ol {
+	list-style:
+		decimal outside !important;
+}
+
+.editor-styles-wrapper
+	.arcn-content-section li + li {
+	margin-top: 6px !important;
+}
+
+
+/* =========================================================
+   LINKS IN EDITOR
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-content-section
+	a:not(.wp-element-button) {
+	color: #111111 !important;
+
+	font: inherit;
+	line-height: inherit;
+
+	text-decoration-line: underline !important;
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: 3px;
+}
+
+.editor-styles-wrapper
+	.arcn-content-section
+	a:not(.wp-element-button):hover {
+	color: #c8102e !important;
+}
+
+
+/* =========================================================
+   STACKED LINK PARAGRAPHS
+   ========================================================= */
+
+.editor-styles-wrapper
+	.arcn-section-content
+	p:has(> a:only-child)
+	+ p:has(> a:only-child) {
+	margin-top: -16px !important;
+}
+
+
+/* =========================================================
+   TABLET EDITOR
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+	.editor-styles-wrapper
+		.arcn-page-body
+		> .block-editor-inner-blocks
+		> .block-editor-block-list__layout {
+		grid-template-columns:
+			1fr
+			2fr;
+
+		gap: 20px;
+	}
+}

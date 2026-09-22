@@ -1,0 +1,266 @@
+/* =========================================================
+   ARCN FOOTER
+   ========================================================= */
+
+.arcn-site-footer {
+	width: 100%;
+
+	margin: 0 !important;
+
+	padding: 20px 0;
+
+	background: #fafafa;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	color: #000000;
+}
+
+.arcn-site-footer__inner {
+	width: 90%;
+	max-width: none;
+
+	margin: 0 auto !important;
+}
+
+
+/* =========================================================
+   MAIN FOOTER GRID
+   ========================================================= */
+
+.arcn-footer__top {
+	display: grid;
+
+	grid-template-columns:
+		repeat(4, minmax(0, 1fr));
+
+	gap: 40px;
+
+	margin: 0 !important;
+
+	padding: 20px 0;
+}
+
+.arcn-footer__column {
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: flex-start;
+
+	gap: 8px;
+
+	margin: 0 !important;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+   ========================================================= */
+
+.arcn-footer__copyright {
+	margin: 0 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.4;
+
+	color: #000000;
+}
+
+
+/* =========================================================
+   COLUMN HEADINGS
+   ========================================================= */
+
+.arcn-footer__heading {
+	margin: 0 0 4px !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.3;
+
+	text-transform: uppercase;
+
+	color: #000000;
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
+
+.arcn-footer__link {
+	margin: 0 !important;
+}
+
+.arcn-footer__link a,
+.arcn-footer__utility a {
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.4;
+
+	letter-spacing: 2px;
+
+	text-transform: uppercase;
+
+	color: #000000 !important;
+
+	text-decoration: none !important;
+
+	transition:
+		color 160ms ease;
+}
+
+.arcn-footer__link a:hover,
+.arcn-footer__link a:focus-visible,
+.arcn-footer__utility a:hover,
+.arcn-footer__utility a:focus-visible {
+	color: #c8102e !important;
+}
+
+
+/* =========================================================
+   BOTTOM FOOTER
+   ========================================================= */
+
+.arcn-footer__bottom {
+	display: grid;
+
+	grid-template-columns:
+		repeat(3, minmax(0, 1fr));
+
+	align-items: center;
+
+	gap: 20px;
+
+	margin: 0 !important;
+
+	padding: 20px 0 0;
+
+	border-top: 1px solid #000000;
+}
+
+.arcn-footer__utility {
+	margin: 0 !important;
+}
+
+.arcn-footer__utility--left {
+	text-align: left;
+}
+
+.arcn-footer__utility--left a::after {
+	content: "";
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin-left: 4px;
+	vertical-align: -1px;
+	background-color: currentColor;
+	-webkit-mask: url("../images/arrow-up-right.svg") center / contain no-repeat;
+	mask: url("../images/arrow-up-right.svg") center / contain no-repeat;
+}
+
+.arcn-footer__utility--center {
+	text-align: center;
+}
+
+.arcn-footer__utility--right {
+	text-align: right;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+	.arcn-footer__subscribe-detail {
+		display: none;
+	}
+
+	.arcn-footer__top {
+		grid-template-columns:
+			repeat(2, minmax(0, 1fr));
+
+		gap: 40px;
+	}
+
+	.arcn-footer__copyright {
+		font-size: 14px;
+	}
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+	.arcn-site-footer {
+		padding: 20px 0;
+	}
+
+	.arcn-footer__top {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		gap: 36px 20px;
+
+		padding: 20px 0 30px;
+	}
+
+	.arcn-footer__column {
+		gap: 6px;
+	}
+
+	.arcn-footer__copyright {
+		font-size: 12px;
+	}
+
+	.arcn-footer__heading {
+		font-size: 14px;
+	}
+
+	.arcn-footer__link a,
+	.arcn-footer__utility a {
+		font-size: 12px;
+	}
+
+	.arcn-footer__bottom {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+
+		gap: 14px;
+
+		padding-top: 20px;
+	}
+
+	.arcn-footer__column,
+	.arcn-footer__utility {
+		min-width: 0;
+		overflow-wrap: anywhere;
+	}
+}

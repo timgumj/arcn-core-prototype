@@ -1,0 +1,98 @@
+{
+
+	"version": 3,
+
+	"settings": {
+		"appearanceTools": false,
+
+		"layout": {
+			"contentSize": "1200px",
+			"wideSize": "1600px"
+		},
+
+		"color": {
+			"custom": false,
+			"customGradient": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+
+			"palette": [
+				{
+					"slug": "body-text",
+					"name": "Body text",
+					"color": "#333333"
+				},
+				{
+					"slug": "black",
+					"name": "Black",
+					"color": "#000000"
+				},
+				{
+					"slug": "muted",
+					"name": "Muted grey",
+					"color": "#666666"
+				},
+				{
+					"slug": "white",
+					"name": "White",
+					"color": "#ffffff"
+				},
+				{
+					"slug": "arcn-red",
+					"name": "ARCN Red",
+					"color": "#c8102e"
+				}
+			]
+		},
+
+		"spacing": {
+			"customSpacingSize": false,
+			"margin": false,
+			"padding": false
+		},
+
+		"typography": {
+			"customFontSize": false,
+			"defaultFontSizes": false,
+			"dropCap": false,
+			"lineHeight": false,
+
+			"fontFamilies": [
+				{
+					"fontFamily": "Inter, Arial, Helvetica, sans-serif",
+					"name": "Inter",
+					"slug": "inter"
+				}
+			]
+		}
+	},
+
+	"styles": {
+		"color": {
+			"text": "#333333",
+			"background": "#ffffff"
+		},
+
+		"typography": {
+			"fontFamily": "var:preset|font-family|inter"
+		},
+
+		"elements": {
+			"heading": {
+				"color": {
+					"text": "#000000"
+				}
+			},
+
+			"link": {
+				"color": {
+					"text": "#111111"
+				},
+
+				"typography": {
+					"textDecoration": "underline"
+				}
+			}
+		}
+	}
+}
