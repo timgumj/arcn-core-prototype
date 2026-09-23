@@ -1,0 +1,57 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","align":"full","className":"arcn-search-page","layout":{"type":"default"}} -->
+<main class="wp-block-group alignfull arcn-search-page">
+  <!-- wp:group {"className":"arcn-search-page__inner","layout":{"type":"default"}} -->
+  <div class="wp-block-group arcn-search-page__inner">
+    <!-- wp:query-title {"type":"search","showPrefix":true,"className":"arcn-search-page__title"} /-->
+
+    <!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search the ARCN website","buttonText":"SEARCH","buttonPosition":"button-outside","className":"arcn-search-page__form"} /-->
+
+    <!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"className":"arcn-search-results","layout":{"type":"default"}} -->
+    <div class="wp-block-query arcn-search-results">
+      <!-- wp:post-template {"className":"arcn-search-results__list","layout":{"type":"default"}} -->
+
+      <!-- wp:group {"className":"arcn-search-result","layout":{"type":"default"}} -->
+      <div class="wp-block-group arcn-search-result">
+        <!-- wp:post-title {"isLink":true,"className":"arcn-search-result__title"} /-->
+
+        <!-- wp:post-excerpt {"moreText":"READ MORE...","excerptLength":45,"className":"arcn-search-result__excerpt"} /-->
+      </div>
+      <!-- /wp:group -->
+
+      <!-- /wp:post-template -->
+
+      <!-- wp:query-pagination {"paginationArrow":"none","className":"arcn-search-pagination","layout":{"type":"flex","justifyContent":"left"}} -->
+
+      <!-- wp:query-pagination-previous {"label":"Previous"} /-->
+
+      <!-- wp:query-pagination-numbers /-->
+
+      <!-- wp:query-pagination-next {"label":"Next"} /-->
+
+      <!-- /wp:query-pagination -->
+
+      <!-- wp:query-no-results -->
+
+      <!-- wp:group {"className":"arcn-search-no-results","layout":{"type":"default"}} -->
+      <div class="wp-block-group arcn-search-no-results">
+        <!-- wp:heading {"level":2} -->
+        <h2 class="wp-block-heading">No results found</h2>
+        <!-- /wp:heading -->
+
+        <!-- wp:paragraph -->
+        <p>Try another search term or a shorter version of the word.</p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+
+      <!-- /wp:query-no-results -->
+    </div>
+    <!-- /wp:query -->
+  </div>
+  <!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

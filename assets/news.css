@@ -1,0 +1,547 @@
+/* =========================================================
+   ARCN NEWS PAGE
+   ========================================================= */
+
+.arcn-news-page {
+	width: 100% !important;
+	max-width: none !important;
+
+	margin: 0 !important;
+
+	padding:
+		50px
+		0 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	color: #333333;
+}
+
+.arcn-news-page,
+.arcn-news-page * {
+	box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FEATURE AREA
+
+   Divi:
+   Desktop = 90%
+   Tablet  = 90%
+   Mobile  = 90%
+   ========================================================= */
+
+.arcn-news-feature {
+	width: 90% !important;
+	max-width: 90% !important;
+
+	margin:
+		0
+		auto !important;
+
+	padding:
+		0
+		30px !important;
+
+	background: #ffffff;
+
+	border-left:
+		1px
+		solid
+		#c8102e;
+
+	border-right:
+		1px
+		solid
+		#c8102e;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
+
+.arcn-news-feature__title {
+	margin: 0 !important;
+
+	padding:
+		0
+		0
+		10px !important;
+
+	border-bottom:
+		1px
+		solid
+		#111111;
+
+	color: #000000 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 18px !important;
+	font-weight: 700 !important;
+	line-height: 1.4 !important;
+
+	letter-spacing: 0 !important;
+
+	text-align: left;
+
+	text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FEATURE IMAGE
+   ========================================================= */
+
+.arcn-news-feature__image {
+	display: block;
+
+	width: 100% !important;
+	max-width: 100% !important;
+
+	margin:
+		10px
+		0
+		0 !important;
+
+	padding: 0 !important;
+}
+
+.arcn-news-feature__image img {
+	display: block;
+
+	width: 100% !important;
+	max-width: 100% !important;
+
+	height: auto !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	border: 0;
+	border-radius: 0;
+
+	object-fit: cover;
+}
+
+
+/* =========================================================
+   IMAGE CAPTION
+
+   Divi = 10px
+   ========================================================= */
+
+.arcn-news-feature__caption {
+	margin:
+		4px
+		0
+		10px !important;
+
+	padding:
+		0
+		4px !important;
+
+	color: #000000 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 10px !important;
+	font-weight: 400 !important;
+	line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   NEWS POSTS AREA
+
+   Original Divi:
+   width = 90%
+   top margin = 40px
+   top border = 1px
+   ========================================================= */
+
+.arcn-news-posts {
+	width: 90% !important;
+	max-width: 90% !important;
+
+	margin:
+		40px
+		auto
+		0 !important;
+
+	padding: 0 !important;
+
+	border-top:
+		1px
+		solid
+		#111111;
+}
+
+
+/* =========================================================
+   QUERY
+   ========================================================= */
+
+.arcn-news-query {
+	width: 100% !important;
+	max-width: none !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.arcn-news-list {
+	display: block !important;
+
+	width: 100% !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	list-style: none !important;
+}
+
+
+/* =========================================================
+   INDIVIDUAL ARTICLE
+
+   Divi gives every article a 1px bottom border.
+   ========================================================= */
+
+.arcn-news-list
+> li {
+	width: 100% !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.arcn-news-card {
+	width: 100% !important;
+
+	margin: 0 !important;
+
+	padding:
+		16px
+		0
+		16px !important;
+
+	border-bottom:
+		1px
+		solid
+		#000000;
+}
+
+
+/* =========================================================
+   POST TITLE
+
+   Desktop/tablet = 16px
+   Phone = 14px
+   ========================================================= */
+
+.arcn-news-card__title {
+	margin:
+		0
+		0
+		12px !important;
+
+	padding: 0 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 16px !important;
+	font-weight: 700 !important;
+	line-height: 1.4 !important;
+
+	color: #000000 !important;
+}
+
+.arcn-news-card__title a {
+	color: #000000 !important;
+
+	text-decoration: none !important;
+}
+
+.arcn-news-card__title a:hover,
+.arcn-news-card__title a:focus-visible {
+	color: #c8102e !important;
+}
+
+
+/* =========================================================
+   EXCERPT
+   ========================================================= */
+
+.arcn-news-card__excerpt {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.arcn-news-card__excerpt
+.wp-block-post-excerpt__excerpt {
+	margin: 0 !important;
+
+	color: #555555 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 16px !important;
+	font-weight: 400 !important;
+	line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   READ MORE
+
+   Matches Divi custom styling.
+   ========================================================= */
+
+.arcn-news-card__excerpt
+.wp-block-post-excerpt__more-text {
+	margin:
+		12px
+		0
+		0 !important;
+
+	padding: 0 !important;
+}
+
+.arcn-news-card__excerpt
+.wp-block-post-excerpt__more-link {
+	display: inline-flex !important;
+
+	align-items: center;
+
+	width: fit-content !important;
+	max-width: fit-content !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	color: #000000 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 12px !important;
+	font-weight: 600 !important;
+	line-height: 1.4 !important;
+
+	letter-spacing: 0.08em !important;
+
+	text-transform: uppercase;
+
+	text-decoration-line: underline !important;
+	text-decoration-style: solid !important;
+	text-decoration-thickness: 1px !important;
+	text-decoration-color: #c8102e !important;
+
+	text-underline-offset: 6px;
+
+	white-space: nowrap;
+}
+
+.arcn-news-card__excerpt
+.wp-block-post-excerpt__more-link:hover,
+.arcn-news-card__excerpt
+.wp-block-post-excerpt__more-link:focus-visible {
+	color: #c8102e !important;
+}
+
+
+/* =========================================================
+   REMOVE POST META / IMAGES
+
+   Defensive rules in case an editor later adds them.
+   The original Divi Blog module has these disabled.
+   ========================================================= */
+
+.arcn-news-card
+.wp-block-post-featured-image,
+
+.arcn-news-card
+.wp-block-post-date,
+
+.arcn-news-card
+.wp-block-post-author,
+
+.arcn-news-card
+.wp-block-post-terms {
+	display: none !important;
+}
+
+
+/* =========================================================
+   PAGINATION
+
+   Only appears once there are more than 10 posts.
+   ========================================================= */
+
+.arcn-news-pagination {
+	gap: 14px;
+
+	margin:
+		28px
+		0
+		0 !important;
+
+	padding: 0 !important;
+}
+
+.arcn-news-pagination a,
+.arcn-news-pagination span {
+	color: #000000 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 12px;
+	font-weight: 600;
+
+	text-decoration: none;
+}
+
+.arcn-news-pagination
+.current {
+	color: #c8102e !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media only screen and (max-width: 1024px) {
+
+	.arcn-news-page {
+		padding:
+			50px
+			0 !important;
+	}
+
+	.arcn-news-feature {
+		width: 90% !important;
+		max-width: 90% !important;
+
+		padding:
+			0
+			30px !important;
+	}
+
+	.arcn-news-feature__title {
+		font-size: 16px !important;
+	}
+
+	.arcn-news-posts {
+		width: 90% !important;
+		max-width: 90% !important;
+	}
+
+	.arcn-news-card__title {
+		font-size: 16px !important;
+	}
+
+	.arcn-news-card__excerpt
+	.wp-block-post-excerpt__excerpt {
+		font-size: 14px !important;
+	}
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media only screen and (max-width: 767px) {
+
+	.arcn-news-page {
+		padding:
+			0
+			0
+			20px !important;
+	}
+
+	.arcn-news-feature {
+		width: 90% !important;
+		max-width: 90% !important;
+
+		padding:
+			0
+			16px !important;
+
+		border-left: 0;
+		border-right: 0;
+	}
+
+	.arcn-news-feature__title {
+		margin-top: 30px !important;
+
+		font-size: 16px !important;
+	}
+
+	.arcn-news-feature__caption {
+		padding:
+			0 !important;
+	}
+
+	.arcn-news-posts {
+		width: 90% !important;
+		max-width: 90% !important;
+
+		margin-top: 40px !important;
+	}
+
+	.arcn-news-card {
+		padding:
+			12px
+			0 !important;
+	}
+
+	.arcn-news-card__title {
+		margin-bottom: 10px !important;
+
+		font-size: 14px !important;
+		line-height: 1.4 !important;
+	}
+
+	.arcn-news-card__excerpt
+	.wp-block-post-excerpt__excerpt {
+		font-size: 14px !important;
+		line-height: 1.4 !important;
+	}
+
+	.arcn-news-card__excerpt
+	.wp-block-post-excerpt__more-text {
+		margin-top: 10px !important;
+	}
+}

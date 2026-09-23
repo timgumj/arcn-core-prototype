@@ -47,6 +47,11 @@ function arcn_core_prototype_setup()
     add_theme_support('wp-block-styles');
     add_theme_support('align-wide');
     add_theme_support('editor-styles');
+    /*
+     * ARCN uses its own controlled pattern library.
+     * Do not mix WordPress core patterns into the inserter.
+     */
+    remove_theme_support('core-block-patterns');
 
     add_editor_style(
         array(
@@ -63,6 +68,9 @@ function arcn_core_prototype_setup()
             'assets/css/event-list.css',
 
             'assets/css/editor.css',
+            'assets/news.css',
+            'assets/css/single-post.css',
+            'assets/css/search.css',
         )
     );
 }
@@ -70,6 +78,18 @@ function arcn_core_prototype_setup()
 add_action(
     'after_setup_theme',
     'arcn_core_prototype_setup'
+);
+
+/*
+ * Do not load patterns from the WordPress.org
+ * Pattern Directory.
+ *
+ * ARCN should present a small, controlled library
+ * containing only the patterns intended for this site.
+ */
+add_filter(
+    'should_load_remote_block_patterns',
+    '__return_false'
 );
 
 
@@ -193,6 +213,50 @@ add_action(
 
 
 /* =========================================================
+   BLOCK EDITOR INTERFACE
+   ========================================================= */
+
+function arcn_core_editor_ui_assets()
+{
+
+    $path =
+        '/assets/css/editor-ui.css';
+
+
+    $full_path =
+        get_theme_file_path(
+            $path
+        );
+
+
+    if (
+        ! file_exists(
+            $full_path
+        )
+    ) {
+        return;
+    }
+
+
+    wp_enqueue_style(
+        'arcn-editor-ui',
+        get_theme_file_uri(
+            $path
+        ),
+        array(),
+        filemtime(
+            $full_path
+        )
+    );
+}
+
+add_action(
+    'enqueue_block_editor_assets',
+    'arcn_core_editor_ui_assets',
+    100
+);
+
+/* =========================================================
    FRONTEND ASSETS
    ========================================================= */
 
@@ -260,6 +324,35 @@ function arcn_core_prototype_assets()
 
 
     /* =====================================================
+   SEARCH CSS
+   ===================================================== */
+
+    $search_css_path =
+        get_theme_file_path(
+            '/assets/css/search.css'
+        );
+
+    if (
+        file_exists(
+            $search_css_path
+        )
+    ) {
+
+        wp_enqueue_style(
+            'arcn-search',
+            get_theme_file_uri(
+                '/assets/css/search.css'
+            ),
+            array(
+                'arcn-header',
+            ),
+            filemtime(
+                $search_css_path
+            )
+        );
+    }
+
+    /* =====================================================
        PAGE CSS
        ===================================================== */
 
@@ -286,6 +379,44 @@ function arcn_core_prototype_assets()
         );
     }
 
+
+
+    /* =====================================================
+   SINGLE POST CSS
+   ===================================================== */
+
+    if (
+        is_singular(
+            'post'
+        )
+    ) {
+
+        $single_post_css_path =
+            get_theme_file_path(
+                '/assets/css/single-post.css'
+            );
+
+
+        if (
+            file_exists(
+                $single_post_css_path
+            )
+        ) {
+
+            wp_enqueue_style(
+                'arcn-single-post',
+                get_theme_file_uri(
+                    '/assets/css/single-post.css'
+                ),
+                array(
+                    'arcn-page',
+                ),
+                filemtime(
+                    $single_post_css_path
+                )
+            );
+        }
+    }
 
     /* =====================================================
        FOOTER CSS
@@ -314,6 +445,34 @@ function arcn_core_prototype_assets()
         );
     }
 
+    /* =====================================================
+   NEWS CSS
+   ===================================================== */
+
+    $news_css_path =
+        get_theme_file_path(
+            '/assets/news.css'
+        );
+
+    if (
+        file_exists(
+            $news_css_path
+        )
+    ) {
+
+        wp_enqueue_style(
+            'arcn-news',
+            get_theme_file_uri(
+                '/assets/news.css'
+            ),
+            array(
+                'arcn-page',
+            ),
+            filemtime(
+                $news_css_path
+            )
+        );
+    }
 
     /* =====================================================
        HOMEPAGE CSS
@@ -458,6 +617,67 @@ function arcn_core_prototype_assets()
 
 
     /* =====================================================
+   LANGUAGE SWITCHER JS
+   ===================================================== */
+
+    $language_switcher_js_path =
+        get_theme_file_path(
+            '/assets/css/js/language-switcher.js'
+        );
+
+    if (
+        file_exists(
+            $language_switcher_js_path
+        )
+    ) {
+
+        wp_enqueue_script(
+            'arcn-language-switcher',
+            get_theme_file_uri(
+                '/assets/css/js/language-switcher.js'
+            ),
+            array(
+                'arcn-header',
+            ),
+            filemtime(
+                $language_switcher_js_path
+            ),
+            true
+        );
+    }
+
+
+    /* =====================================================
+   SEARCH JS
+   ===================================================== */
+
+    $search_js_path =
+        get_theme_file_path(
+            '/assets/css/js/search.js'
+        );
+
+    if (
+        file_exists(
+            $search_js_path
+        )
+    ) {
+
+        wp_enqueue_script(
+            'arcn-search',
+            get_theme_file_uri(
+                '/assets/css/js/search.js'
+            ),
+            array(
+                'arcn-header',
+            ),
+            filemtime(
+                $search_js_path
+            ),
+            true
+        );
+    }
+
+    /* =====================================================
        HERO SLIDER JS
        ===================================================== */
 
@@ -493,31 +713,528 @@ add_action(
 );
 
 
+
 /* =========================================================
-   PATTERN CATEGORIES
+   ARCN SITE SEARCH
    ========================================================= */
+
+/*
+ * Search all public, searchable ARCN content.
+ *
+ * This includes normal:
+ *
+ * - Pages
+ * - Posts
+ * - Events
+ *
+ * and future public searchable post types.
+ *
+ * Attachments and internal WordPress objects are excluded.
+ */
+
+function arcn_search_content_types(
+    $query
+) {
+
+    if (
+        is_admin() ||
+        ! $query->is_main_query() ||
+        ! $query->is_search()
+    ) {
+        return;
+    }
+
+
+    /*
+     * Start with every post type WordPress considers
+     * publicly searchable.
+     */
+    $post_types =
+        get_post_types(
+            array(
+                'public' =>
+                true,
+
+                'exclude_from_search' =>
+                false,
+            ),
+            'names'
+        );
+
+
+    $post_types =
+        array_values(
+            $post_types
+        );
+
+
+    /*
+     * Make sure the core ARCN content types
+     * are included.
+     */
+    $required_types =
+        array(
+            'post',
+            'page',
+            'tribe_events',
+        );
+
+
+    foreach (
+        $required_types
+        as $post_type
+    ) {
+
+        if (
+            post_type_exists(
+                $post_type
+            )
+        ) {
+
+            $post_types[] =
+                $post_type;
+        }
+    }
+
+
+    /*
+     * Do not return media attachment pages.
+     */
+    $post_types =
+        array_diff(
+            $post_types,
+            array(
+                'attachment',
+            )
+        );
+
+
+    $post_types =
+        array_values(
+            array_unique(
+                $post_types
+            )
+        );
+
+
+    $query->set(
+        'post_type',
+        $post_types
+    );
+
+
+    $query->set(
+        'posts_per_page',
+        10
+    );
+}
+
+add_action(
+    'pre_get_posts',
+    'arcn_search_content_types'
+);
+
+
+/* =========================================================
+   SEARCH RESULT CONTEXT EXCERPTS
+   ========================================================= */
+
+/*
+ * Instead of always displaying the beginning of a page,
+ * try to display text surrounding the actual search term.
+ *
+ * Example:
+ *
+ * Search:
+ * citizen
+ *
+ * Result:
+ * "...Austrian citizenship can be restored under §58c..."
+ */
+
+function arcn_search_context_excerpt(
+    $excerpt,
+    $post
+) {
+
+    if (
+        is_admin() ||
+        ! is_search() ||
+        ! (
+            $post instanceof
+            WP_Post
+        )
+    ) {
+        return $excerpt;
+    }
+
+
+    $search_query =
+        trim(
+            get_search_query(
+                false
+            )
+        );
+
+
+    if (
+        $search_query === ''
+    ) {
+        return $excerpt;
+    }
+
+
+    /*
+     * Get actual page/post content.
+     */
+    $content =
+        strip_shortcodes(
+            $post->post_content
+        );
+
+
+    $content =
+        wp_strip_all_tags(
+            $content,
+            true
+        );
+
+
+    $content =
+        html_entity_decode(
+            $content,
+            ENT_QUOTES,
+            get_bloginfo(
+                'charset'
+            )
+        );
+
+
+    $content =
+        preg_replace(
+            '/\s+/u',
+            ' ',
+            $content
+        );
+
+
+    $content =
+        trim(
+            (string)
+            $content
+        );
+
+
+    if (
+        $content === ''
+    ) {
+        return $excerpt;
+    }
+
+
+    /*
+     * Separate multi-word searches.
+     */
+    $terms =
+        preg_split(
+            '/\s+/u',
+            $search_query,
+            -1,
+            PREG_SPLIT_NO_EMPTY
+        );
+
+
+    $match_position =
+        false;
+
+
+    foreach (
+        $terms as
+        $term
+    ) {
+
+        $term =
+            trim(
+                $term,
+                " \t\n\r\0\x0B\"'.,;:!?()[]{}"
+            );
+
+
+        if (
+            $term === ''
+        ) {
+            continue;
+        }
+
+
+        if (
+            function_exists(
+                'mb_stripos'
+            )
+        ) {
+
+            $position =
+                mb_stripos(
+                    $content,
+                    $term,
+                    0,
+                    'UTF-8'
+                );
+        } else {
+
+            $position =
+                stripos(
+                    $content,
+                    $term
+                );
+        }
+
+
+        if (
+            $position === false
+        ) {
+            continue;
+        }
+
+
+        if (
+            $match_position === false ||
+            $position <
+            $match_position
+        ) {
+
+            $match_position =
+                $position;
+        }
+    }
+
+
+    /*
+     * Search term may only appear in the title.
+     * In that case return the start of the content.
+     */
+    if (
+        $match_position === false
+    ) {
+
+        return wp_trim_words(
+            $content,
+            38,
+            '…'
+        );
+    }
+
+
+    /*
+     * Pull text from around the matching word.
+     */
+    $context_before =
+        100;
+
+
+    $snippet_length =
+        260;
+
+
+    $start =
+        max(
+            0,
+            $match_position -
+                $context_before
+        );
+
+
+    if (
+        function_exists(
+            'mb_substr'
+        )
+    ) {
+
+        $snippet =
+            mb_substr(
+                $content,
+                $start,
+                $snippet_length,
+                'UTF-8'
+            );
+
+
+        $content_length =
+            mb_strlen(
+                $content,
+                'UTF-8'
+            );
+    } else {
+
+        $snippet =
+            substr(
+                $content,
+                $start,
+                $snippet_length
+            );
+
+
+        $content_length =
+            strlen(
+                $content
+            );
+    }
+
+
+    /*
+     * Avoid beginning in the middle of a word.
+     */
+    if (
+        $start > 0
+    ) {
+
+        $first_space =
+            strpos(
+                $snippet,
+                ' '
+            );
+
+
+        if (
+            $first_space !== false
+        ) {
+
+            $snippet =
+                substr(
+                    $snippet,
+                    $first_space + 1
+                );
+        }
+    }
+
+
+    $snippet =
+        trim(
+            $snippet
+        );
+
+
+    if (
+        $start > 0
+    ) {
+
+        $snippet =
+            '…' .
+            $snippet;
+    }
+
+
+    if (
+        (
+            $start +
+            $snippet_length
+        ) <
+        $content_length
+    ) {
+
+        $snippet .=
+            '…';
+    }
+
+
+    return $snippet;
+}
+
+add_filter(
+    'get_the_excerpt',
+    'arcn_search_context_excerpt',
+    20,
+    2
+);
+
+
+/* =========================================================
+   ARCN PATTERN CATEGORIES
+   ========================================================= */
+
+function arcn_core_register_contact_pattern()
+{
+    $name = 'arcn-core-prototype/page-contact';
+    if (WP_Block_Patterns_Registry::get_instance()->is_registered($name)) {
+        return;
+    }
+
+    $file = get_theme_file_path('/patterns/page-contact.php');
+    if (! is_readable($file)) {
+        return;
+    }
+
+    ob_start();
+    include $file;
+    $content = ob_get_clean();
+
+    register_block_pattern($name, array(
+        'title' => __('ARCN Contact Page', 'arcn-core-prototype'),
+        'description' => __('Contact page with image, newsletter information and Contact Form 7 form.', 'arcn-core-prototype'),
+        'categories' => array('arcn-pages'),
+        'keywords' => array('contact'),
+        'content' => $content,
+        'inserter' => true,
+    ));
+}
+
+add_action('init', 'arcn_core_register_contact_pattern', 20);
+
+function arcn_core_register_news_pattern()
+{
+    $name = 'arcn-core-prototype/page-news';
+    if (WP_Block_Patterns_Registry::get_instance()->is_registered($name)) {
+        return;
+    }
+
+    $file = get_theme_file_path('/patterns/page-news.php');
+    if (! is_readable($file)) {
+        return;
+    }
+
+    ob_start();
+    include $file;
+    $content = ob_get_clean();
+
+    register_block_pattern($name, array(
+        'title' => __('ARCN News Page', 'arcn-core-prototype'),
+        'description' => __('News page with featured image and a dynamic WordPress post list.', 'arcn-core-prototype'),
+        'categories' => array('arcn-pages'),
+        'keywords' => array('news', 'blog', 'posts'),
+        'content' => $content,
+        'inserter' => true,
+    ));
+}
+
+add_action('init', 'arcn_core_register_news_pattern', 20);
 
 function arcn_core_prototype_pattern_categories()
 {
 
+    /*
+     * Complete page starter layouts.
+     */
     register_block_pattern_category(
-        'arcn-sections',
+        'arcn-pages',
         array(
             'label' =>
             __(
-                'ARCN Sections',
+                'ARCN — Pages',
                 'arcn-core-prototype'
             ),
         )
     );
 
 
+    /*
+     * Individual reusable page sections.
+     */
     register_block_pattern_category(
-        'arcn-pages',
+        'arcn-sections',
         array(
             'label' =>
             __(
-                'ARCN Page Starters',
+                'ARCN — Sections',
                 'arcn-core-prototype'
             ),
         )
@@ -528,7 +1245,6 @@ add_action(
     'init',
     'arcn_core_prototype_pattern_categories'
 );
-
 
 /* =========================================================
    HERO SLIDER EDITOR BLOCK

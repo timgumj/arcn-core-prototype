@@ -962,4 +962,1374 @@
 	.arcn-section-content h4 {
 		font-size: 13px;
 	}
+
+}
+
+/* =========================================================
+   MEMORIAL PROJECTS COMPARISON
+   Reusable ARCN section pattern
+   ========================================================= */
+
+.arcn-memorial-comparison {
+	width: 100% !important;
+	max-width: none !important;
+
+	margin: 0 !important;
+	padding: 0 0 64px !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	color: #333333;
+}
+
+.arcn-memorial-comparison,
+.arcn-memorial-comparison * {
+	box-sizing: border-box;
+}
+
+
+/* =========================================================
+   OUTER TABLE
+   Divi width = 90%
+   ========================================================= */
+
+.arcn-memorial-comparison__inner {
+	width: 90% !important;
+	max-width: 90% !important;
+
+	margin:
+		0
+		auto !important;
+
+	padding:
+		0
+		30px !important;
+
+	background: #ffffff;
+
+	border: 1px solid #111111;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.arcn-memorial-comparison__title {
+	margin: 0 !important;
+
+	padding:
+		28px
+		0
+		20px !important;
+
+	border-bottom: 1px solid #111111;
+
+	color: #000000;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.4;
+
+	text-align: left;
+}
+
+
+/* =========================================================
+   ROWS
+
+   IMPORTANT:
+   Three columns remain on desktop, tablet and mobile.
+   ========================================================= */
+
+.arcn-memorial-comparison__row {
+	display: grid !important;
+
+	grid-template-columns:
+		repeat(
+			3,
+			minmax(0, 1fr)
+		);
+
+	column-gap: 20px;
+	row-gap: 0;
+
+	align-items: start;
+
+	width: 100%;
+
+	margin: 0 !important;
+
+	padding:
+		16px
+		0 !important;
+
+	border-bottom:
+		1px solid
+		rgba(
+			0,
+			0,
+			0,
+			0.2
+		);
+}
+
+.arcn-memorial-comparison__row--last {
+	border-bottom: 0;
+}
+
+
+/* =========================================================
+   CELLS
+   ========================================================= */
+
+.arcn-memorial-comparison__cell {
+	min-width: 0;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.arcn-memorial-comparison .arcn-memorial-comparison__cell p {
+	margin: 0 !important;
+	padding: 0 !important;
+
+	color: #333333;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	font-size: 14px !important;
+	font-weight: 400;
+	line-height: 1.45;
+
+	overflow-wrap: anywhere;
+}
+
+.arcn-memorial-comparison__cell--label p,
+.arcn-memorial-comparison__project-title strong {
+	color: #000000;
+
+	font-weight: 700;
+}
+
+
+/* =========================================================
+   PROJECT HEADER
+   ========================================================= */
+
+.arcn-memorial-comparison__project-title {
+	color: #000000 !important;
+}
+
+.arcn-memorial-comparison .arcn-memorial-comparison__cell .arcn-memorial-comparison__project-note {
+	margin-top: 14px !important;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.arcn-memorial-comparison a {
+	color: #000000 !important;
+
+	text-decoration-line: underline;
+	text-decoration-style: solid;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+}
+
+.arcn-memorial-comparison a:hover,
+.arcn-memorial-comparison a:focus-visible {
+	color: #c8102e !important;
+}
+
+.arcn-memorial-comparison a:focus-visible {
+	outline: 2px solid #c8102e;
+	outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+
+   Keep all three columns.
+   Reduce type and spacing only.
+   ========================================================= */
+
+@media only screen and (max-width: 1024px) {
+
+	.arcn-memorial-comparison__inner {
+		padding:
+			0
+			20px !important;
+	}
+
+	.arcn-memorial-comparison__title {
+		padding:
+			24px
+			0
+			16px !important;
+
+		font-size: 15px;
+	}
+
+	.arcn-memorial-comparison__row {
+		grid-template-columns:
+			repeat(
+				3,
+				minmax(0, 1fr)
+			);
+
+		column-gap: 12px;
+
+		padding:
+			12px
+			0 !important;
+	}
+
+	.arcn-memorial-comparison .arcn-memorial-comparison__cell p {
+		font-size: 13px !important;
+		line-height: 1.4;
+	}
+
+	.arcn-memorial-comparison .arcn-memorial-comparison__cell .arcn-memorial-comparison__project-note {
+		margin-top: 10px !important;
+	}
+}
+
+
+/* =========================================================
+   MOBILE
+
+   Still three columns.
+   Only tighten typography and spacing.
+   ========================================================= */
+
+@media only screen and (max-width: 767px) {
+
+	.arcn-memorial-comparison__inner {
+		width: 90% !important;
+		max-width: 90% !important;
+
+		padding:
+			0
+			10px !important;
+	}
+
+	.arcn-memorial-comparison__title {
+		padding:
+			22px
+			0
+			14px !important;
+
+		font-size: 14px;
+		line-height: 1.35;
+	}
+
+	.arcn-memorial-comparison__row {
+		grid-template-columns:
+			repeat(
+				3,
+				minmax(0, 1fr)
+			);
+
+		column-gap: 7px;
+		row-gap: 0;
+
+		padding:
+			10px
+			0 !important;
+	}
+
+	.arcn-memorial-comparison .arcn-memorial-comparison__cell p {
+		font-size: 12px !important;
+		line-height: 1.35;
+	}
+
+	.arcn-memorial-comparison .arcn-memorial-comparison__cell .arcn-memorial-comparison__project-note {
+		margin-top: 7px !important;
+	}
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+
+   Do NOT stack.
+   ========================================================= */
+
+@media only screen and (max-width: 479px) {
+
+	.arcn-memorial-comparison__row {
+		column-gap: 5px;
+	}
+
+	.arcn-memorial-comparison .arcn-memorial-comparison__cell p {
+		font-size: 11px !important;
+		line-height: 1.35;
+	}
+
+}
+
+/* =========================================================
+   ARCN CONTACT PAGE
+   Exact Gutenberg recreation of the Divi Contact page
+   ========================================================= */
+
+
+/* =========================================================
+   FULL PAGE WRAPPER
+
+   Centre the frame within the page without viewport overflow.
+   ========================================================= */
+
+.arcn-contact-page {
+	width: 100% !important;
+	max-width: none !important;
+
+	margin: 0 auto !important;
+
+	padding:
+		30px
+		0 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif;
+
+	color: #333333;
+
+	background: #ffffff;
+}
+
+.arcn-contact-page,
+.arcn-contact-page * {
+	box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN FRAME
+
+   Divi:
+   width = 90%
+   left = 8 / 24
+   right = 16 / 24
+   outer border = 1px
+   ========================================================= */
+
+.arcn-contact-page
+.arcn-contact-page__columns.wp-block-columns {
+	display: grid !important;
+
+	grid-template-columns:
+		minmax(0, 1fr)
+		minmax(0, 2fr) !important;
+
+	gap: 0 !important;
+
+	align-items: stretch !important;
+
+	width: 90% !important;
+	max-width: 90% !important;
+
+	margin:
+		0
+		auto !important;
+
+	padding: 0 !important;
+
+	border:
+		1px
+		solid
+		#111111 !important;
+
+	background: #ffffff;
+}
+
+.arcn-contact-page
+.arcn-contact-page__columns
+> .wp-block-column {
+	min-width: 0 !important;
+
+	margin: 0 !important;
+}
+
+
+/* =========================================================
+   LEFT COLUMN
+   ========================================================= */
+
+.arcn-contact-page__left {
+	display: flex !important;
+
+	flex-direction: column;
+
+	width: 100% !important;
+	min-width: 0 !important;
+	height: 100%;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	background: #fafafa !important;
+
+	border-right:
+		1px
+		solid
+		#111111;
+}
+
+
+/* =========================================================
+   IMAGE PANEL
+   ========================================================= */
+
+.arcn-contact-page__image-panel {
+	display: block;
+
+	width: 100% !important;
+
+	margin: 0 !important;
+
+	padding:
+		24px
+		24px
+		30px !important;
+
+	background: #fafafa !important;
+
+	border-bottom:
+		1px
+		solid
+		#111111;
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.arcn-contact-page__image {
+	display: block !important;
+
+	width: 100% !important;
+	max-width: 100% !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.arcn-contact-page__image img {
+	display: block !important;
+
+	width: 100% !important;
+	max-width: 100% !important;
+
+	height: auto !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	object-fit: contain;
+
+	border: 0 !important;
+	border-radius: 0 !important;
+
+	box-shadow: none !important;
+}
+
+
+/* =========================================================
+   IMAGE CAPTION
+
+   Divi = 10px / 1.4em
+   ========================================================= */
+
+.arcn-contact-page__caption {
+	width: 100%;
+
+	margin:
+		8px
+		0
+		0 !important;
+
+	padding:
+		0
+		2px !important;
+
+	color: #000000 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 10px !important;
+	font-weight: 400 !important;
+	line-height: 1.4 !important;
+}
+
+.arcn-contact-page__caption em {
+	color: #000000 !important;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+   ========================================================= */
+
+.arcn-contact-page__newsletter {
+	display: flex !important;
+
+	flex: 1;
+
+	flex-direction: column;
+	justify-content: flex-start;
+
+	width: 100% !important;
+
+	margin: 0 !important;
+
+	padding:
+		34px
+		26px
+		18px !important;
+
+	background: #fafafa !important;
+}
+
+.arcn-contact-page__newsletter-link {
+	margin:
+		0
+		0
+		12px !important;
+
+	padding: 0 !important;
+}
+
+.arcn-contact-page__newsletter-link a {
+	display: inline-block;
+
+	margin: 0 !important;
+
+	padding:
+		0
+		0
+		3px !important;
+
+	color: #000000 !important;
+
+	border-bottom:
+		1px
+		solid
+		#000000;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 12px !important;
+	font-weight: 700 !important;
+	line-height: 1.2 !important;
+
+	letter-spacing: 2px !important;
+
+	text-transform: uppercase;
+
+	text-decoration: none !important;
+}
+
+.arcn-contact-page__newsletter-link a:hover,
+.arcn-contact-page__newsletter-link a:focus-visible {
+	color: #000000 !important;
+
+	border-color: #000000;
+}
+
+.arcn-contact-page__newsletter-text {
+	margin: 0 !important;
+	padding: 0 !important;
+
+	color: #333333 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 16px !important;
+	font-weight: 400 !important;
+	line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   RIGHT COLUMN
+   ========================================================= */
+
+.arcn-contact-page__right {
+	display: block !important;
+
+	width: 100% !important;
+	min-width: 0 !important;
+
+	margin: 0 !important;
+
+	padding:
+		24px
+		24px
+		30px !important;
+
+	background: #ffffff !important;
+}
+
+
+/* =========================================================
+   CONTACT TITLE
+   ========================================================= */
+
+.arcn-contact-page__title {
+	margin:
+		0
+		0
+		14px !important;
+
+	padding: 0 !important;
+
+	color: #000000 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 18px !important;
+	font-weight: 700 !important;
+	line-height: 1 !important;
+
+	letter-spacing: 0 !important;
+
+	text-transform: none;
+}
+
+
+/* =========================================================
+   INTRO COPY
+   ========================================================= */
+
+.arcn-contact-page__intro {
+	margin:
+		0
+		0
+		16px !important;
+
+	padding: 0 !important;
+
+	color: #000000 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 16px !important;
+	font-weight: 400 !important;
+	line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   CONTACT FORM 7 CONTAINER
+
+   Desktop Divi form does not extend to the full width of
+   the right column. Approx. 88% reproduces the screenshot.
+   ========================================================= */
+
+.arcn-contact-page
+.arcn-contact-form {
+	display: block;
+
+	width: 100% !important;
+	max-width: none !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.arcn-contact-page
+.arcn-contact-form
+.wpcf7 {
+	display: block;
+
+	width: 100% !important;
+	max-width: none !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.arcn-contact-page
+.arcn-contact-form
+.wpcf7-form {
+	display: block;
+
+	width: 88% !important;
+	max-width: 1000px !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	background: transparent !important;
+}
+
+
+/* =========================================================
+   REMOVE DEFAULT CF7 / WORDPRESS FORM SPACING
+   ========================================================= */
+
+.arcn-contact-page
+.wpcf7-form p {
+	margin:
+		0
+		0
+		24px !important;
+
+	padding: 0 !important;
+}
+
+.arcn-contact-page
+.wpcf7-form p:last-child {
+	margin-bottom: 0 !important;
+}
+
+.arcn-contact-page
+.wpcf7-form br {
+	line-height: 0;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.arcn-contact-page
+.wpcf7-form label {
+	display: block !important;
+
+	width: 100% !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	color: #444444 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 14px !important;
+	font-style: normal !important;
+	font-weight: 400 !important;
+	line-height: 1.4 !important;
+
+	letter-spacing: 0 !important;
+
+	text-transform: none !important;
+}
+
+
+/* =========================================================
+   CF7 CONTROL WRAPPER
+   ========================================================= */
+
+.arcn-contact-page
+.wpcf7-form-control-wrap {
+	display: block !important;
+
+	width: 100% !important;
+
+	margin:
+		2px
+		0
+		0 !important;
+
+	padding: 0 !important;
+}
+
+
+/* =========================================================
+   EVERY CF7 TEXT CONTROL
+
+   Use CF7's own classes as well as HTML selectors so this
+   overrides plugin/theme defaults reliably.
+   ========================================================= */
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-form-control.wpcf7-text,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-form-control.wpcf7-email,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-form-control.wpcf7-tel,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-form-control.wpcf7-url,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-form-control.wpcf7-number,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-form-control.wpcf7-date,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-form-control.wpcf7-select,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-form-control.wpcf7-textarea,
+
+.arcn-contact-page
+.wpcf7-form
+input[type="text"],
+
+.arcn-contact-page
+.wpcf7-form
+input[type="email"],
+
+.arcn-contact-page
+.wpcf7-form
+input[type="tel"],
+
+.arcn-contact-page
+.wpcf7-form
+input[type="url"],
+
+.arcn-contact-page
+.wpcf7-form
+input[type="number"],
+
+.arcn-contact-page
+.wpcf7-form
+input[type="date"],
+
+.arcn-contact-page
+.wpcf7-form
+select,
+
+.arcn-contact-page
+.wpcf7-form
+textarea {
+	display: block !important;
+
+	width: 100% !important;
+	max-width: 100% !important;
+
+	margin: 0 !important;
+
+	padding:
+		7px
+		8px !important;
+
+	color: #000000 !important;
+
+	background:
+		transparent !important;
+
+	background-image:
+		none !important;
+
+	border:
+		1px
+		solid
+		#000000 !important;
+
+	border-radius:
+		0 !important;
+
+	box-shadow:
+		none !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size:
+		14px !important;
+
+	font-style:
+		normal !important;
+
+	font-weight:
+		400 !important;
+
+	line-height:
+		1.4 !important;
+
+	letter-spacing:
+		0 !important;
+
+	text-transform:
+		none !important;
+
+	outline:
+		0 !important;
+}
+
+
+/* =========================================================
+   SINGLE-LINE FIELDS
+   ========================================================= */
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-text,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-email,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-tel,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-url,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-number,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-date,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-select {
+	height: 40px !important;
+	min-height: 40px !important;
+}
+
+
+/* =========================================================
+   TEXTAREA
+
+   Exact Divi custom CSS = 140px
+   ========================================================= */
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-textarea,
+
+.arcn-contact-page
+.wpcf7-form
+textarea {
+	height: 140px !important;
+	min-height: 140px !important;
+
+	resize: vertical !important;
+}
+
+
+/* =========================================================
+   PLACEHOLDERS
+   ========================================================= */
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-form-control::placeholder {
+	color: #333333 !important;
+
+	opacity: 1 !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 12px !important;
+	font-weight: 700 !important;
+
+	letter-spacing: 0.2em !important;
+
+	text-transform: uppercase !important;
+}
+
+
+/* =========================================================
+   FIELD FOCUS
+   ========================================================= */
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-form-control:focus {
+	color: #000000 !important;
+
+	background: transparent !important;
+
+	border:
+		1px
+		solid
+		#000000 !important;
+
+	border-radius: 0 !important;
+
+	box-shadow: none !important;
+
+	outline: 0 !important;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-submit,
+
+.arcn-contact-page
+.wpcf7-form
+input.wpcf7-submit,
+
+.arcn-contact-page
+.wpcf7-form
+input[type="submit"] {
+	display: inline-block !important;
+
+	width: auto !important;
+	min-width: 0 !important;
+	max-width: none !important;
+
+	height: auto !important;
+	min-height: 0 !important;
+
+	margin:
+		2px
+		0
+		0
+		8px !important;
+
+	padding:
+		3px
+		9px !important;
+
+	color: #ffffff !important;
+
+	background: #000000 !important;
+
+	background-image: none !important;
+
+	border:
+		1px
+		solid
+		#000000 !important;
+
+	border-radius: 0 !important;
+
+	box-shadow: none !important;
+
+	font-family:
+		Inter,
+		Arial,
+		Helvetica,
+		sans-serif !important;
+
+	font-size: 12px !important;
+	font-weight: 600 !important;
+	line-height: 1.2 !important;
+
+	letter-spacing:
+		0.2em !important;
+
+	text-transform:
+		uppercase !important;
+
+	text-decoration:
+		none !important;
+
+	cursor: pointer;
+}
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-submit:hover,
+
+.arcn-contact-page
+.wpcf7-form
+.wpcf7-submit:focus-visible {
+	color: #ffffff !important;
+
+	background: #000000 !important;
+
+	border-color: #000000 !important;
+
+	box-shadow: none !important;
+}
+
+
+/* =========================================================
+   CF7 SPINNER
+   ========================================================= */
+
+.arcn-contact-page
+.wpcf7-spinner {
+	margin:
+		0
+		0
+		0
+		10px !important;
+
+	vertical-align: middle;
+}
+
+
+/* =========================================================
+   CF7 VALIDATION / RESPONSE
+   ========================================================= */
+
+.arcn-contact-page
+.wpcf7-not-valid-tip {
+	margin-top: 4px !important;
+
+	color: #c8102e !important;
+
+	font-size: 11px !important;
+	line-height: 1.4 !important;
+}
+
+.arcn-contact-page
+.wpcf7-response-output {
+	margin:
+		16px
+		0
+		0 !important;
+
+	padding:
+		8px
+		10px !important;
+
+	border-radius:
+		0 !important;
+
+	font-size:
+		12px !important;
+
+	line-height:
+		1.4 !important;
+}
+
+
+/* =========================================================
+   TABLET
+
+   Divi retains 8/24 + 16/24.
+   ========================================================= */
+
+@media only screen and (max-width: 980px) {
+
+	.arcn-contact-page {
+		padding:
+			30px
+			0 !important;
+	}
+
+	.arcn-contact-page
+	.arcn-contact-page__columns.wp-block-columns {
+		display: grid !important;
+
+		grid-template-columns:
+			minmax(0, 1fr)
+			minmax(0, 2fr) !important;
+
+		width: 90% !important;
+		max-width: 90% !important;
+
+		margin:
+			0
+			auto !important;
+	}
+
+
+	/* LEFT */
+
+	.arcn-contact-page__image-panel {
+		padding: 30px !important;
+	}
+
+	.arcn-contact-page__newsletter {
+		padding:
+			30px
+			30px
+			20px !important;
+	}
+
+	.arcn-contact-page__newsletter-text {
+		font-size:
+			14px !important;
+	}
+
+
+	/* RIGHT */
+
+	.arcn-contact-page__right {
+		padding:
+			30px !important;
+	}
+
+	.arcn-contact-page__title {
+		font-size:
+			16px !important;
+	}
+
+	.arcn-contact-page__intro {
+		font-size:
+			14px !important;
+	}
+
+	.arcn-contact-page
+	.arcn-contact-form
+	.wpcf7-form {
+		width:
+			100% !important;
+
+		max-width:
+			100% !important;
+	}
+}
+
+
+/* =========================================================
+   MOBILE
+
+   Divi changes both columns to 24/24.
+   ========================================================= */
+
+@media only screen and (max-width: 767px) {
+
+	.arcn-contact-page {
+		padding:
+			20px
+			0 !important;
+	}
+
+	.arcn-contact-page
+	.arcn-contact-page__columns.wp-block-columns {
+		display: grid !important;
+
+		grid-template-columns:
+			minmax(0, 1fr) !important;
+
+		width:
+			90% !important;
+
+		max-width:
+			90% !important;
+
+		margin:
+			0
+			auto !important;
+	}
+
+
+	/* LEFT */
+
+	.arcn-contact-page__left {
+		border-right:
+			0 !important;
+
+		border-bottom:
+			1px
+			solid
+			#111111;
+	}
+
+	.arcn-contact-page__image-panel {
+		padding:
+			30px !important;
+	}
+
+	.arcn-contact-page__newsletter {
+		padding:
+			30px !important;
+	}
+
+
+	/* RIGHT */
+
+	.arcn-contact-page__right {
+		padding:
+			20px !important;
+	}
+
+	.arcn-contact-page__title {
+		font-size:
+			16px !important;
+	}
+
+	.arcn-contact-page__intro {
+		font-size:
+			14px !important;
+	}
+
+	.arcn-contact-page
+	.arcn-contact-form
+	.wpcf7-form {
+		width:
+			100% !important;
+
+		max-width:
+			100% !important;
+	}
+
+	.arcn-contact-page
+	.wpcf7-form p {
+		margin-bottom:
+			14px !important;
+	}
+
+	.arcn-contact-page
+	.wpcf7-form
+	.wpcf7-submit {
+		margin-left:
+			0 !important;
+	}
 }

@@ -1,0 +1,38 @@
+/* =========================================================
+   ARCN GUTENBERG EDITOR UI
+   ========================================================= */
+
+
+/* =========================================================
+   PATTERN TITLES
+
+   Gutenberg can hide pattern titles in the desktop inserter.
+   ARCN keeps them visible so editors know exactly what they
+   are inserting.
+   ========================================================= */
+
+.block-editor-block-patterns-list__item-title {
+	display: block !important;
+
+	margin:
+		8px
+		0
+		14px !important;
+
+	padding: 0 !important;
+
+	color: #1e1e1e !important;
+
+	font-size: 12px !important;
+	font-weight: 600 !important;
+	line-height: 1.35 !important;
+
+	text-align: left !important;
+}
+
+
+/* Give each preview/title combination some separation. */
+
+.block-editor-block-patterns-list__item {
+	margin-bottom: 18px !important;
+}
